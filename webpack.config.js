@@ -85,18 +85,11 @@ module.exports = {
       	new webpack.NoErrorsPlugin()
   	],
   	module: {
-		preLoaders: [
-      		{
-        		test: /\.(js|jsx)$/,
-        		include: path.join(__dirname, 'src'),
-        		loader: 'eslint-loader'
-      		}
-    	],
     	loaders: [
     		{
     			test: /\.(js|jsx)$/,
         		loader: 'babel',
-        		include: path.join(__dirname, '/../src')
+        		include: path.join(__dirname, '/src')
     		}, {
     			test: /\.s?css$/,
       			loader: 'style!css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!autoprefixer!sass'
