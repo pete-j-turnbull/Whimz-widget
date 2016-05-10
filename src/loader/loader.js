@@ -1,24 +1,25 @@
-import WidgetHandler from './WidgetHandler';
+import objectAssign from 'object-assign';
 
-export function loader () {
-    let widgetContainers = document.getElementsByClassName('whims-widget');
-    let widgetMap = {};
-    widgetContainers = Array.prototype.slice.call(widgetContainers);
+const defaultStyle = {
+    display: 'block',
+    float: 'none',
+    margin: 0,
+    padding: 0,
+    border: 0,
+    backgroundColor: 'transparent',
+    overflow: 'hidden',
+    right: 0,
+    top: 0,
+    width: '100%',
+    height: '100%'
+};
 
-    widgetContainers.forEach(widget => {
-        let widgetHandler = new WidgetHandler(widget);
-        widgetMap[widgetHandler.id] = widgetHandler;
-    });
-
-    window.addEventListener('message', function (e) {
-        let widgetHost = LOCAL ? 'http://localhost:3000' : ENV.widgetHost;
-        if (e.origin === widgetHost && e.data && e.data.key === ENV.appMessageKey) {
-            const {id, ...config} = e.data.config;
-            if (widgetMap[id]) {
-                widgetMap[id].handleMessage(config);
-            }
-        }
-    });
+export function loader() {
+    var widgetContainer = document.getElementsByClassName('whims-widget')[0];
+    var iframe = document.createElement('iframe');
+    iframe.src = 'http://localhost:3000/index.html';
+    objectAssign(iframe.style, defaultStyle);
+    widgetContainer.appendChild(iframe);
 }
 
 export default loader();

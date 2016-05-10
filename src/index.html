@@ -1,42 +1,8 @@
-<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>{%=o.htmlWebpackPlugin.options.title || 'Whims Widget'%}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
-      <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
-    {% } %}
-  </head>
-  <body>
-    <!-- TODO: Generate SVG definitions during build -->
-    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <defs>
-        <symbol id="icon-unavailable" viewBox="0 0 1024 1024">
-          <title>unavailable</title>
-          <path class="path1" d="M509.858 0c-278.494 0-509.858 231.364-509.858 509.858s231.364 509.858 509.858 509.858 509.858-231.364 509.858-509.858-227.079-509.858-509.858-509.858zM509.858 128.536c81.406 0 158.527 25.707 222.795 72.837l-531.28 531.28c-42.845-64.268-72.837-137.105-72.837-222.795 0-209.941 171.381-381.322 381.322-381.322zM509.858 895.464c-81.406 0-158.527-25.707-222.795-72.837l535.565-531.28c42.845 64.268 72.837 137.105 72.837 222.795 0 209.941-171.381 381.322-385.607 381.322z"></path>
-        </symbol>
-        <symbol id="icon-info" viewBox="0 0 1024 1024">
-          <title>info</title>
-          <path class="path1" d="M55.296 512c0-251.904 204.8-456.704 456.704-456.704 251.699 0 456.704 204.8 456.704 456.704s-205.414 457.114-457.114 456.704c-251.699-0.205-456.294-205.005-456.294-456.704zM130.662 512c0 210.125 171.008 381.338 381.338 381.338 210.125 0.205 381.338-171.008 381.542-381.133 0.205-210.33-171.213-381.747-381.542-381.542-210.33 0-381.338 171.008-381.338 381.338zM564.838 468.787v-40.755h-105.677v325.427h105.677v-284.672zM512 241.050c32.563 0 65.126 32.563 65.126 65.126s-32.563 65.126-65.126 65.126-65.126-32.563-65.126-65.126 32.563-65.126 65.126-65.126z"></path>
-        </symbol>
-        <symbol id="icon-close" viewBox="0 0 1024 1024">
-          <title>close</title>
-          <path class="path1" d="M638.157 711.27l-130.253-130.253-122.061 130.253-73.114-73.114 130.048-130.253-130.253-122.061 73.114-73.114 122.061 130.253 130.253-130.253 73.114 73.114-129.843 122.061 130.253 130.253-73.318 73.114zM55.296 512c0-251.904 204.8-456.704 456.704-456.704 251.699 0 456.704 204.8 456.704 456.704s-205.414 457.114-457.114 456.704c-251.699-0.205-456.294-205.005-456.294-456.704zM130.662 512c0 210.125 171.008 381.338 381.338 381.338 210.125 0.205 381.338-171.008 381.542-381.133 0.205-210.33-171.213-381.747-381.542-381.542-210.33 0-381.338 171.008-381.338 381.338z"></path>
-        </symbol>
-      </defs>
-    </svg>
-
-    <div id="app"></div>
-    
-    {% if (o.webpackConfig.buildType !== 'dist')  { %}
-      <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
-    {% } %}
-    {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-      <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
-    {% } %}
-  </body>
+    <head>
+    </head>
+    <body>
+        <script src="{%= o.htmlWebpackPlugin.files.js %}"></script>
+        <div id="app"></div>
+    </body>
 </html>
