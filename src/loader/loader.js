@@ -17,7 +17,7 @@ const defaultStyle = {
 export function loader() {
     var widgetContainer = document.getElementsByClassName('whims-widget')[0];
     var iframe = document.createElement('iframe');
-    iframe.src = 'http://localhost:3000/index.html';
+    iframe.src = 'http://localhost:3000';
     objectAssign(iframe.style, defaultStyle);
     widgetContainer.appendChild(iframe);
 }

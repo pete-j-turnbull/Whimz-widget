@@ -1,7 +1,9 @@
-export const TOGGLE_WIDGET = 'TOGGLE_WIDGET';
+import * as types from '../constants/ActionTypes';
 
-export const toggleWidget = () => {
-    return {
-        type: TOGGLE_WIDGET
-    };
+export const answerQuestion = (questionId, answerId) => {
+	return {
+		type: types.ANSWER_QUESTION,
+                questionid,
+		answerId
+	};
 }

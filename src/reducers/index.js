@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import toggleState from './toggleState' 
+import { combineReducers } from 'redux';
+import current from './questions';
 
 const rootReducer = combineReducers({
-    toggleState
+    current
 })
 
-export default rootReducer
+export default rootReducer;

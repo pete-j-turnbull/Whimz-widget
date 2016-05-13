@@ -1,16 +1,21 @@
 var open = require('open');
-var chalk = require('chalk');
-var express = require('express');
-var path = require('path');
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('./webpack.config');
 
-var app = express();
 var port = 3000;
-var publicPath = path.resolve(__dirname, 'dist');
 
-// We point to our static assets
-app.use(express.static(publicPath));
+new WebpackDevServer(webpack(config), {
+    publicPath: config.output.publicPath,
+    hot: true,
+    historyApiFallback: true,
+    stats: {
+        colors: true
+    }
+}).listen(port, 'localhost', function (err) {
+    if (err) {
+        console.log(err);
+    }
 
-// And run the server
-app.listen(port, function () {
-  console.log('Server running on port ' + port);
+    console.log('Listening at localhost:' + port);
 });

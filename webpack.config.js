@@ -1,43 +1,34 @@
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var port = 3000;
 var srcPath = path.join(__dirname, '/src');
 var outputPath = path.join(__dirname, '/dist');
 
 module.exports = {
-    port: port,
+    devtool: 'eval',
     debug: true,
+    port: port,
+    entry: {
+        app: [
+            'webpack-dev-server/client?http://localhost:' + port,
+            'webpack/hot/only-dev-server',
+            'react-hot-loader/patch',
+            './src/index'
+            ],
+        loader: './src/loader/loader'
+    },
     output: {
         path: outputPath,
         filename: '[name].js',
-        publicPath: '/'
-    },
-    devServer: {
-        contentBase: './src/',
-        historyApiFallback: true,
-        hot: true,
-        port: port,
-        noInfo: false,
-        publicPath: '/'
+        publicPath: '/static/'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx'],
-        alias: {
-            actions: srcPath + '/actions/',
-            components: srcPath + '/components',
-            stores: srcPath + '/stores',
-            reducers: srcPath + 'reducers'
-        }
+        extensions: ['', '.js']
     },
-    entry: {
-        app: [
-            './src/run'
-        ],
-        loader: './src/loader/loader'
+    resolveLoader: {
+        'fallback': path.join(__dirname, 'node_modules')
     },
-    devtool: 'cheap-module-eval-source-map',
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             output: {
@@ -48,21 +39,15 @@ module.exports = {
         new webpack.NoErrorsPlugin()
     ],
     module: {
-        loaders: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                loader: 'react-hot!babel-loader',
-                include: path.join(__dirname, '/src')
-            },
-            {
-                test: /\.s?css$/,
-                loader: 'style!css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!autoprefixer!sass'
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
-            }
-        ]
-    }
+        loaders: [{
+            test: /\.js$/,
+            loader: 'babel',
+            exclude: /node_modules/,
+            include: srcPath
+        }, {
+            test: /\.s?css$/,
+            loader: 'style!css!sass',
+            include: srcPath
+        }]
+  }
 }
