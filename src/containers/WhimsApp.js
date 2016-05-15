@@ -9,12 +9,12 @@ class WhimsApp extends Component {
     render () {
         const { question, actions } = this.props;
         const componentStyle = {
-            'box-shadow': '-10px 10px 36px -17px rgba(0, 0, 0, 0.75)',
-            'background-color': '#f2f2f2',
-            'max-width': '70%',
-            'min-height': '60%',
-            'margin': '10vh auto 0',
-            'padding': '40px'
+            boxShadow: '-10px 10px 36px -17px rgba(0, 0, 0, 0.75)',
+            backgroundColor: '#f2f2f2',
+            maxWidth: '70%',
+            minHeight: '60%',
+            margin: '10vh auto 0',
+            padding: '40px'
         };
  
         return (

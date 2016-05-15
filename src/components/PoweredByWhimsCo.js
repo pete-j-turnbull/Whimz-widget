@@ -9,8 +9,8 @@ export default class PoweredByWhimsCo extends Component {
 
     render () {
         const aStyle = {
-            'text-decoration': 'none',
-            'color': 'black'
+            textDecoration: 'none',
+            color: 'black'
         };
         return (
             <div>

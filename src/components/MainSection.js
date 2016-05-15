@@ -17,14 +17,14 @@ export default class MainSection extends Component {
     render () {
         const { question, actions } = this.props;
         const componentStyle = {
-            'display': 'flex'
+            display: 'flex'
         };
         const questionWrapperStyle = {
-            'flex': '5',
-            'margin-left': '30px'
+            flex: '5',
+            marginLeft: '30px'
         };
         const sidebarWrapperStyle = {
-            'flex': '3'
+            flex: '3'
         };
        
         return (
