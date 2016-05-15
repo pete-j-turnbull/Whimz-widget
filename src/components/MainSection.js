@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import Header from './Header';
 import Question from './Question';
 import Sidebar from './Sidebar';
-import styles from './MainSection.scss';
 
 export default class MainSection extends Component {
     static propTypes = {
