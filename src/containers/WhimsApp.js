@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Sidebar from '../components/Sidebar'
 import MainSection from '../components/MainSection';
+import Footer from '../components/Footer';
 import * as WhimsActions from '../actions/actions';
 
 class WhimsApp extends Component {
     render () {
-        const { current, actions } = this.props;
+        const { question, actions } = this.props;
 
         return (
             <div>
-                <MainSection current={current} actions={actions} />
-                <Sidebar />
+                <MainSection question={question} actions={actions} />
+                <Footer />
             </div>
         );
     }
@@ -20,7 +20,7 @@ class WhimsApp extends Component {
 
 function mapStateToProps (state) {
     return {
-        current: state.current
+        question: state.question
     };
 }
 

@@ -1,23 +1,27 @@
 import React, { Component, PropTypes } from 'react';
+import Header from './Header';
+import Question from './Question';
+import Sidebar from './Sidebar';
 
 export default class MainSection extends Component {
     static propTypes = {
-        current: PropTypes.object.isRequired,
+        question: PropTypes.object.isRequired,
         actions: PropTypes.object.isRequired
     };
 
-    constructor(props, context) {
+    constructor (props, context) {
         super(props, context);
         this.state = { };
     }
 
     render () {
-        const { current, actions } = this.props;
+        const { question, actions } = this.props;
         return (
-            <section className='main'>
-                { current.question }
-            
-            </section>
+            <div>
+                <Header />
+                <Question question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />
+                <Sidebar />
+            </div>
         );
     }
 };

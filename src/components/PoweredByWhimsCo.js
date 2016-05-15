@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './PoweredByWhimsCo.scss';
 
-let PoweredByWhimsCoComponent = (props) => {
-    let cssClasses = [styles.component];
-    
-    return (
-        <div className={cssClasses.join(' ')}>
-            Powered by 
-            <a href="http://poweredby.whims.co" target="_blank" title="Powered by Whims.Co">Whims.Co</a>
-        </div>
-    );
+export default class PoweredByWhimsCo extends Component {
+    cssClasses = [styles.component];
+
+    constructor (props, context) {
+        super(props, context);
+        this.state = {};
+    }
+
+    render () {
+        return (
+            <div className={this.cssClasses.join(' ')}>
+                Powered by 
+                <a href="http://poweredby.whims.co" target="_blank" title="Powered by Whims.co"> Whims.co</a>
+            </div>
+        );
+    }
 };
-
-PoweredByWhimsCo.displayName = 'PoweredByWhimsCo';
-
-export default PoweredByWhimsCo;

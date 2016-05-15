@@ -1,1 +1,2 @@
 export const ANSWER_QUESTION = 'ANSWER_QUESTION';
+export const SKIP_QUESTION = 'SKIP_QUESTION';
