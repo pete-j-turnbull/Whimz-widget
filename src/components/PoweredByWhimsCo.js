@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import styles from './PoweredByWhimsCo.scss';
 
 export default class PoweredByWhimsCo extends Component {
-    cssClasses = [styles.component];
 
     constructor (props, context) {
         super(props, context);
@@ -10,10 +8,14 @@ export default class PoweredByWhimsCo extends Component {
     }
 
     render () {
+        const aStyle = {
+            'text-decoration': 'none',
+            'color': 'black'
+        };
         return (
-            <div className={this.cssClasses.join(' ')}>
+            <div>
                 Powered by 
-                <a href="http://poweredby.whims.co" target="_blank" title="Powered by Whims.co"> Whims.co</a>
+                <a style={aStyle} href="http://poweredby.whims.co" target="_blank" title="Powered by Whims.co"> Whims.co</a>
             </div>
         );
     }

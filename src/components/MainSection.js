@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Header from './Header';
 import Question from './Question';
 import Sidebar from './Sidebar';
+import styles from './MainSection.scss';
 
 export default class MainSection extends Component {
     static propTypes = {
@@ -16,11 +17,28 @@ export default class MainSection extends Component {
 
     render () {
         const { question, actions } = this.props;
+        const componentStyle = {
+            'display': 'flex'
+        };
+        const questionWrapperStyle = {
+            'flex': '5',
+            'margin-left': '30px'
+        };
+        const sidebarWrapperStyle = {
+            'flex': '3'
+        };
+       
         return (
-            <div>
-                <Header />
-                <Question question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />
-                <Sidebar />
+            <div style={componentStyle}>
+                <div>
+                    <Header />
+                </div>
+                <div style={questionWrapperStyle}>
+                    <Question question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />
+                </div>
+                <div style={sidebarWrapperStyle}>
+                    <Sidebar />
+                </div>
             </div>
         );
     }
