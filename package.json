@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --release"
+    "start-prod": "node serverSecure.js",
+    "build": "NODE_ENV=production webpack --release"
   },
   "license": "ISC",
   "dependencies": {

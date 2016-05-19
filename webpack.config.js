@@ -6,8 +6,7 @@ var srcPath = path.join(__dirname, '/src');
 var outputPath = path.join(__dirname, '/dist');
 
 module.exports = {
-    devtool: 'eval',
-    debug: true,
+    devtool: 'cheap-module-source-map',
     port: port,
     entry: {
         app: [
@@ -21,7 +20,7 @@ module.exports = {
     output: {
         path: outputPath,
         filename: '[name].js',
-        publicPath: '/static/'
+        publicPath: '/dist/'
     },
     resolve: {
         extensions: ['', '.js']
@@ -30,6 +29,11 @@ module.exports = {
         'fallback': path.join(__dirname, 'node_modules')
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             output: {
                 comments: false

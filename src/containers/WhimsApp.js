@@ -20,7 +20,7 @@ class WhimsApp extends Component {
                 </div>
 
                 <div className="row">
-                    <div className="content col-lg-6 col-lg-offset-3">
+                    <div className="content col-lg-8 col-lg-offset-2">
                         <MainSection question={question} actions={actions} />
                     </div>
                 </div>
