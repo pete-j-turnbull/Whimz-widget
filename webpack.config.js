@@ -39,6 +39,12 @@ module.exports = {
         new webpack.NoErrorsPlugin()
     ],
     module: {
+        preLoaders: [{
+            test: /\.jsx?$/,
+            exclude: /(node_modules)/,
+            loader: 'source-map'
+            }
+        ],
         loaders: [{
             test: /\.js$/,
             loader: 'babel',
@@ -46,8 +52,19 @@ module.exports = {
             include: srcPath
         }, {
             test: /\.s?css$/,
-            loader: 'style!css!sass',
-            include: srcPath
-        }]
-  }
+            include: srcPath,
+            loaders: [
+                'style',
+                'css',
+                'autoprefixer?browsers=last 3 versions',
+                'sass?outputStyle=expanded'
+                ]
+        },{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+        { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
+        {
+            test: /\.(png|gif|jpe?g)$/,
+            loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+        }
+        ]
+    }
 }

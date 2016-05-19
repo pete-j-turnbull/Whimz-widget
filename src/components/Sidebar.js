@@ -4,7 +4,7 @@ export default class Sidebar extends Component {
     render () {
         return (
             <div>
-                Media Content Here..
+
             </div>
         );
     }

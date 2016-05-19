@@ -2,25 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MainSection from '../components/MainSection';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as WhimsActions from '../actions/actions';
+
 
 class WhimsApp extends Component {
     render () {
         const { question, actions } = this.props;
-        const componentStyle = {
-            boxShadow: '-10px 10px 36px -17px rgba(0, 0, 0, 0.75)',
-            backgroundColor: '#f2f2f2',
-            maxWidth: '70%',
-            minHeight: '60%',
-            margin: '10vh auto 0',
-            padding: '40px'
-        };
  
         return (
-            <div style={componentStyle}>
-                <MainSection question={question} actions={actions} />
-                <Footer />
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-12 header">
+                        <Header />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="content col-lg-6 col-lg-offset-3">
+                        <MainSection question={question} actions={actions} />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12 footer">
+                        <Footer />
+                    </div>
+                </div>
             </div>
         );
     }

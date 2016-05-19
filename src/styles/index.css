@@ -1,12 +1,76 @@
-html,
 body {
-    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     padding: 0;
 }
 
-body {
-    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 300;
+.whimsapp {
 }
+
+.main {
+}
+
+.question-wrapper {
+    background-color: #fff;
+    padding: 20px 20px;
+    border-bottom: 1px #f0f0f4 solid;
+    display: block;
+    justify-content: space-between;
+}
+.question-wrapper .question {
+    padding-top: 5px;
+    font-size: 32px;
+}
+
+.answers-options {
+    margin-top: 5px;
+    display: inline;
+}
+.answers-options ul {
+    display: inline;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    height: 100%; 
+}
+.option-result {
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px #1ec7c7 solid;
+    height: 100%;
+    color: #242621;
+    margin-bottom: 2px;
+    float: left;
+}
+
+
+.input-field {
+  font-weight: 300;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field .title {
+  font-size: 35px;
+  color: #1ec7c7;
+}
+
+.input-field .btn {
+  background-color: #1ec7c7;
+  border-color: #ccc;
+  color: #fff;
+}
+
+.input-field ol li span {
+  color: #1ec7c7;
+  margin: 2px;
+  font-size: 25px;
+}
+
+.input-field ol li a {
+  color: #1ec7c7;
+}
+

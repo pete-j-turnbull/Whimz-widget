@@ -9,14 +9,9 @@ export default class Footer extends Component {
     }
 
     render () {
-        const componentStyle = {
-            textAlign: 'left',
-            paddingTop: '30px',
-            fontWeight: '600'
-        };
 
         return (
-            <div style={componentStyle}>
+            <div className="footer">
                 <PoweredByWhimsCo />
             </div>
         );

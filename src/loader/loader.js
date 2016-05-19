@@ -1,7 +1,7 @@
 import objectAssign from 'object-assign';
 
 const defaultStyle = {
-    display: 'block',
+    display: 'none',
     float: 'none',
     margin: 0,
     padding: 0,
@@ -14,12 +14,19 @@ const defaultStyle = {
     height: '100%'
 };
 
-export function loader() {
-    var widgetContainer = document.getElementsByClassName('whims-widget')[0];
+export function initFrame () {
+
     var iframe = document.createElement('iframe');
-    iframe.src = 'http://localhost:3000';
+    iframe.src = 'http://localhost:8080/layout_test2.html';
     objectAssign(iframe.style, defaultStyle);
-    widgetContainer.appendChild(iframe);
+    document.body.appendChild(iframe);
+}
+
+export function toggleFrame () {
+
 }
 
 export default loader();
+
+// Put this loader script in page
+// Make a trigger fun

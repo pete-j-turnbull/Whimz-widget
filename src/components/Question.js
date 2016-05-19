@@ -18,17 +18,64 @@ export default class Question extends Component {
         this.state.selectedAnswer = answerId;
     }
 
+    renderAnswerOptions (answers) {
+        return (
+            <div className="answer-options">
+
+                <div className="row">
+                    <div className="col-lg-6">
+                        <button type="button" className="btn btn-block">{answers[0].answer}</button>
+                    </div>
+                    <div className="col-lg-6">
+                        <button type="button" className="btn btn-block">{answers[1].answer}</button>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <button type="button" className="btn btn-block">{answers[2].answer}</button>
+                    </div>
+                    <div className="col-lg-6">
+                        <button type="button" className="btn btn-block">{answers[2].answer}</button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    renderTextbox () {
+        return (
+            <div className="row text-options">
+                <div className="col-lg-12">
+
+                    <div className="form-group form-md-line-input form-md-floating-label">
+                        <input type="text" className="form-control text-center" />
+                        <label className="text-left">Extra</label>
+                        <span className="help-block">Explain yourself ...</span>
+                    </div>
+
+                </div>
+            </div>
+        );
+    }
     render () {
         const { question, handleSubmit, handleSkip } = this.props;
-        return (
-            <div>
-                {question.question}
-                <ul>
-                    {question.answers.map((a, i) => <li key={a.id} onClick={() => ::this.selectAnswer(a.id)}>{a.answer}</li>)}
-                </ul>
 
-                <input type="button" value="Submit" onClick={() => handleSubmit(question.id, this.state.selectedAnswer)} />
-                <input type="button" value="Skip" onClick={() => handleSkip(question.id)} />
+        return (
+
+            <div className="portlet light">
+
+                <div className="portlet-title">
+                    <span className="question">{question.question}</span>
+                </div>
+
+                <div className="portlet-body form">
+                    <form>
+                        <div className="form-body">
+                            {::this.renderAnswerOptions(question.answers)}
+                            {::this.renderTextbox()}
+                        </div>
+                    </form>
+                </div>
+
             </div>
         );
     }
