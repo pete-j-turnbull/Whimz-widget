@@ -1,32 +1,30 @@
-import objectAssign from 'object-assign';
 
-const defaultStyle = {
-    display: 'none',
-    float: 'none',
-    margin: 0,
-    padding: 0,
-    border: 0,
-    backgroundColor: 'transparent',
-    overflow: 'hidden',
-    right: 0,
-    top: 0,
-    width: '100%',
-    height: '100%'
+var initFrame = function () {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://whims.co/app_frame.html';
+
+    iframe.style.display = 'none';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 0;
+    iframe.style.left = 0;
+    iframe.style.top = 0;
+    iframe.style.zIndex = 9999;
+    iframe.style.position = 'absolute';
+
+    iframe.allowTransparency = true;
+
+    iframe.id = 'whims-widget';
+    document.body.appendChild(iframe);
 };
 
-export function initFrame () {
+var toggleFrame = function () {
+    var hidden = document.getElementById('whims-widget').style.display == "none";
+    if (hidden) {
+        document.getElementById('whims-widget').style.display = "block";
+    } else {
+        document.getElementById('whims-widget').style.display = "none";
+    }
+};
 
-    var iframe = document.createElement('iframe');
-    iframe.src = 'http://localhost:8080/layout_test2.html';
-    objectAssign(iframe.style, defaultStyle);
-    document.body.appendChild(iframe);
-}
-
-export function toggleFrame () {
-
-}
-
-export default loader();
-
-// Put this loader script in page
-// Make a trigger fun
+initFrame();
