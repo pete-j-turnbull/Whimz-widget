@@ -28,3 +28,4 @@ var toggleFrame = function () {
 };
 
 initFrame();
+toggleFrame();
