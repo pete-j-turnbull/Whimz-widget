@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class Question extends Component {
+export default class TextOnly extends Component {
     static propTypes = {
         question: PropTypes.object.isRequired,
         handleSubmit: PropTypes.func.isRequired,

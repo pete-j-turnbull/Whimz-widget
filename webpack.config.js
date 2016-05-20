@@ -6,7 +6,8 @@ var srcPath = path.join(__dirname, '/src');
 var outputPath = path.join(__dirname, '/dist');
 
 module.exports = {
-    devtool: 'cheap-module-source-map',
+    devtool: 'eval',
+    debug: true,
     port: port,
     entry: {
         app: [
@@ -32,11 +33,6 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false
             }
         }),
         new webpack.HotModuleReplacementPlugin(),

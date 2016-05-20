@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "start-prod": "node serverSecure.js",
-    "build": "NODE_ENV=production webpack --release"
+    "build-prod": "NODE_ENV=production webpack --release",
+    "build-dev": "webpack --release"
   },
   "license": "ISC",
   "dependencies": {
@@ -14,12 +15,18 @@
     "classnames": "^2.1.2",
     "express": "^4.13.4",
     "lodash": "^3.10.1",
+    "material-ui": "^0.15.0",
     "object-assign": "^4.0.1",
     "react": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.2",
     "react-bootstrap": "^0.29.3",
+    "react-css-transition-replace": "^1.2.0-beta",
     "react-dom": "^15.0.1",
     "react-hot-loader": "^3.0.0-beta.1",
+    "react-motion": "^0.4.3",
+    "react-motion-ui-pack": "^0.7.3",
     "react-redux": "^4.1.0",
+    "react-tap-event-plugin": "^1.0.0",
     "react-widgets": "^3.3.1",
     "redux": "^3.1.1",
     "redux-logger": "^2.0.4",
