@@ -32,19 +32,6 @@
     background-color: #ffffff;
 }
 
-
-body {
-	margin-bottom: 5vh;
-}
-.footer {
-	position: fixed;
-    height: 8vh;
-    bottom: 0px;
-    left: 16px;
-    right: 0px;
-    margin-bottom: 4px;
-}
-
 .question-enter {
     opacity: 0;
     transform:   translate(0,-250px);

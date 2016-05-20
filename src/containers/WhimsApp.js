@@ -22,9 +22,6 @@ class WhimsApp extends Component {
                             <MainSection question={question} actions={actions} />
                         </div>
                     </div>
-                    <div className="footer">
-                        <Footer />
-                    </div>
                 </div>
             </MuiThemeProvider>
         );
