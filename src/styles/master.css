@@ -1,3 +1,7 @@
+.whimsapp {
+	min-height: 75vh;
+}
+
 .content {
     margin-top: 10vh;
     text-align: center;
