@@ -29,9 +29,11 @@ export default class MainSection extends Component {
         const { question, actions } = this.props;
        
         return (
-            <ReactCSSTransitionGroup transitionName="question" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+            //<ReactCSSTransitionGroup transitionName="question" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+            <div>
                 {this.renderQuestion(question, actions)}
-            </ReactCSSTransitionGroup>
+            </div>
+            //</ReactCSSTransitionGroup>
         );
     }
 };
