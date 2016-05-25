@@ -1,16 +1,16 @@
-import * as types from '../constants/ActionTypes';
-
-export const answerQuestion = (questionId, answerId) => {
-	return {
-		type: types.ANSWER_QUESTION,
-                questionId,
-		answerId
-	};
+export const answerQuestion = (userId, questionId, answerId) => {
+    return {
+        type: 'ANSWER_QUESTION',
+            userId,
+            questionId,
+            answerId
+    };
 }
 
-export const skipQuestion = (questionId) => {
+export const skipQuestion = (userId, questionId) => {
     return {
-        type: types.SKIP_QUESTION,
-        questionId
-    }
+        type: 'SKIP_QUESTION',
+            userId,
+            questionId
+    };
 }

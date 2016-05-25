@@ -7,8 +7,7 @@
     "start": "node server.js",
     "start-prod": "node serverSecure.js",
     "build-prod": "NODE_ENV=production webpack --release",
-    "build-dev": "webpack --release",
-    "io": "babel-node src/server/server.js"
+    "build-dev": "webpack --release"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,7 +16,7 @@
     "express": "^4.13.4",
     "lodash": "^3.10.1",
     "material-ui": "^0.15.0",
-    "object-assign": "^4.0.1",
+    "object-assign": "^4.1.0",
     "react": "^15.0.1",
     "react-addons-css-transition-group": "^15.0.2",
     "react-bootstrap": "^0.29.3",
@@ -30,11 +29,14 @@
     "react-tap-event-plugin": "^1.0.0",
     "react-widgets": "^3.3.1",
     "redux": "^3.1.1",
-    "redux-logger": "^2.0.4",
-    "redux-thunk": "^1.0.0",
+    "redux-api-middleware": "^1.0.2",
+    "redux-logger": "^2.6.1",
+    "redux-saga": "^0.10.4",
     "socket.io": "^1.4.6",
     "socket.io-client": "^1.4.6",
-    "superagent": "^1.6.1"
+    "superagent": "^1.6.1",
+    "uuid": "^2.0.2",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",

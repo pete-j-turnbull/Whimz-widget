@@ -1,7 +1,9 @@
-import { createStore, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
+import createLogger from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
 const enhancer = compose(
     DevTools.instrument(),
@@ -13,7 +15,12 @@ const enhancer = compose(
 );
 
 export default function configureStore(initialState) {
-    const store = createStore(rootReducer, initialState, enhancer);
+    const sagaMiddleware = createSagaMiddleware()
+
+    const store = {
+        ...createStore(rootReducer, initialState, compose(applyMiddleware(createLogger(), sagaMiddleware), enhancer)),
+        runSaga: sagaMiddleware.run
+    }
 
     if (module.hot) {
         module.hot.accept('../reducers', () =>

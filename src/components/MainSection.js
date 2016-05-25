@@ -9,29 +9,33 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 export default class MainSection extends Component {
     static propTypes = {
+        loadingQuestion: PropTypes.bool.isRequired,
         question: PropTypes.object.isRequired,
+        userId: PropTypes.string.isRequired,
         actions: PropTypes.object.isRequired
     };
-    
-    renderQuestion = (question, actions) => {
-        if (question.type == 'multiple-choice') {
-            return (<MultipleChoice key={question.id} question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />);
-        } else if (question.type == 'multiple-choice-with-text') {
-            return (<MultipleChoiceWithText key={question.id} question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />);
-        } else if (question.type == 'text-only') {
-            return (<TextOnly key={question.id} question={question} handleSubmit={actions.answerQuestion} handleSkip={actions.skipQuestion} />);
-        } else {
-            return null;
+
+    renderQuestion = (loadingQuestion, question, answerQuestion, skipQuestion) => {
+        if (!loadingQuestion) {
+            if (question.type == 'multiple-choice') {
+                return (<MultipleChoice key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
+            } else if (question.type == 'multiple-choice-with-text') {
+                return (<MultipleChoiceWithText key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
+            } else if (question.type == 'text-only') {
+                return (<TextOnly key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
+            } else {
+                return null;
+            }
         }
     };
 
     render () {
-        const { question, actions } = this.props;
-       
+        const { loadingQuestion, question, userId, actions } = this.props;
+        console.log(this.props);
         return (
             //<ReactCSSTransitionGroup transitionName="question" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
             <div>
-                {this.renderQuestion(question, actions)}
+                {this.renderQuestion(loadingQuestion, question, (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args))}
             </div>
             //</ReactCSSTransitionGroup>
         );
