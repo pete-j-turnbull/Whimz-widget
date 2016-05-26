@@ -9,17 +9,13 @@ import configureStore from './store/configureStore';
 
 const initialState = {
     loadingQuestion: false,
-    userId: 10,
-    question: {
-        question: 'Hey there, what can we help you with?',
-        type: 'multiple-choice',
-        id: 0,
-        answers: [
-            {id: 0, answer: 'Explore'},
-            {id: 1, answer: 'Match'},
-            {id: 2, answer: 'Apply'}
-        ]
-    }
+    activeQuestionId: '0',
+    userId: '10',
+    questions: [{
+        question: 'Synetiq is a cutting-edge neuromarketing media research start-up, providing content producers with emotional insights directly from their customers’ brain and body. Leveraging recent developments in wearable bio-sensor technology we work hard to understand how people feel when they see an advertisement, TV show or movie. We use this information to help our customers create more engaging videos and reach their goals.',
+        type: 'paragraph',
+        id: '0'
+    }]
 };
 const store = configureStore(initialState);
 store.runSaga(rootSaga);

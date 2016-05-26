@@ -1,43 +1,55 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import Scroll from 'react-scroll';
 import MultipleChoice from './questionTypes/MultipleChoice';
 import MultipleChoiceWithText from './questionTypes/MultipleChoiceWithText';
 import TextOnly from './questionTypes/TextOnly';
-import Transition from 'react-motion-ui-pack';
-import Motion, { spring } from 'react-motion';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
+import ParagraphQuestion from './questionTypes/ParagraphQuestion';
+import smoothScroll from 'smoothscroll';
 
 export default class MainSection extends Component {
     static propTypes = {
         loadingQuestion: PropTypes.bool.isRequired,
-        question: PropTypes.object.isRequired,
+        activeQuestionId: PropTypes.string.isRequired,
+        questions: PropTypes.array.isRequired,
         userId: PropTypes.string.isRequired,
         actions: PropTypes.object.isRequired
     };
 
-    renderQuestion = (loadingQuestion, question, answerQuestion, skipQuestion) => {
-        if (!loadingQuestion) {
-            if (question.type == 'multiple-choice') {
-                return (<MultipleChoice key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
-            } else if (question.type == 'multiple-choice-with-text') {
-                return (<MultipleChoiceWithText key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
-            } else if (question.type == 'text-only') {
-                return (<TextOnly key={question.id} question={question} handleSubmit={answerQuestion} handleSkip={skipQuestion} />);
-            } else {
-                return null;
-            }
+    renderQuestion = (question, answerQuestion, skipQuestion) => {
+        var props = {
+            key: question.id,
+            question: question,
+            handleSubmit: answerQuestion,
+            handleSkip: skipQuestion
+        };
+
+        if (question.type == 'multiple-choice') {
+            return (<MultipleChoice {...props} />);
+        } else if (question.type == 'multiple-choice-with-text') {
+            return (<MultipleChoiceWithText {...props} />);
+        } else if (question.type == 'text-only') {
+            return (<TextOnly {...props} />);
+        } else if (question.type == 'paragraph') {
+            return (<ParagraphQuestion {...props} />);
+        } else {
+            return null;
         }
     };
 
+    componentDidUpdate = () => {
+        var element = document.getElementById(this.props.activeQuestionId);
+        smoothScroll(element);
+    };
+
     render () {
-        const { loadingQuestion, question, userId, actions } = this.props;
-        console.log(this.props);
+        const { loadingQuestion, questions, userId, actions } = this.props;
+        const qs = questions.map((question) => this.renderQuestion(question,
+            (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
         return (
-            //<ReactCSSTransitionGroup transitionName="question" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-            <div>
-                {this.renderQuestion(loadingQuestion, question, (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args))}
-            </div>
-            //</ReactCSSTransitionGroup>
+            <ul className="questions">
+                {qs}
+            </ul>
         );
     }
 };
