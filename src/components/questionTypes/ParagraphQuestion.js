@@ -19,7 +19,7 @@ export default class ParagraphQuestion extends Component {
                 {keyHandlers}
 
                 <div className="wrapper" style={{height: '100vh', paddingTop: '25vh'}}>
-                    <div className="item">“</div>
+                    <div className="item" style={{position: 'relative'}}>“</div>
                     <div className="question">
                         <span>{question.question}</span>
                     </div>

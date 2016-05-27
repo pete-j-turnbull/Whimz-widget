@@ -3,7 +3,7 @@ import { call, put } from 'redux-saga/effects';
 
 function _answerQuestion (userId, questionId, answerId) {
     return new Promise(function (resolve, reject) {
-        fetch('http://localhost:3005/answerQuestion?userId=' + userId + '&questionId=' + questionId + '&answerId=' + answerId).then(res => res.json())
+        fetch('http://localhost:8080/answerQuestion?userId=' + userId + '&questionId=' + questionId + '&answerId=' + answerId).then(res => res.json())
             .then(json => { resolve(json); });
     });
 }
