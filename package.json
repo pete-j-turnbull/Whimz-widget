@@ -23,6 +23,7 @@
     "react-css-transition-replace": "^1.2.0-beta",
     "react-dom": "^15.1.0",
     "react-hot-loader": "^3.0.0-beta.1",
+    "react-key-handler": "^0.2.0",
     "react-motion": "^0.4.3",
     "react-motion-ui-pack": "^0.7.3",
     "react-redux": "^4.1.0",

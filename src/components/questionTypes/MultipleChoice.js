@@ -1,42 +1,26 @@
 import React, { Component, PropTypes } from 'react';
+import KeyHandler, {KEYPRESS} from 'react-key-handler';
 
 export default class MultipleChoice extends Component {
     static propTypes = {
         question: PropTypes.object.isRequired,
+        active: PropTypes.bool.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         handleSkip: PropTypes.func.isRequired
     }
 
-    renderAnswerOptions (question, handleSubmit, handleSkip) {
-        const answers = question.answers;
-        return (
-            <div className="answer-options">
-
-                <div className="row">
-                    <div className="col-lg-6">
-                        <button type="button" className="btn btn-block" onClick={() => handleSubmit(question.id, answers[0].id)}>{answers[0].answer}</button>
-                    </div>
-                    <div className="col-lg-6">
-                        <button type="button" className="btn btn-block" onClick={() => handleSubmit(question.id, answers[1].id)}>{answers[1].answer}</button>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-6">
-                        <button type="button" className="btn btn-block" onClick={() => handleSubmit(question.id, answers[2].id)}>{answers[2].answer}</button>
-                    </div>
-                    <div className="col-lg-6">
-                        <button type="button" className="btn btn-block" onClick={() => handleSkip(question.id)}>Skip</button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
     render () {
-        const { question, handleSubmit, handleSkip } = this.props;
+        const { question, active, handleSubmit, handleSkip } = this.props;
+        const liCName = 'list required multiple active visible ' + (active ? 'focus' : '');
+        const keyHandlers = active ? (<div><KeyHandler keyEventName={KEYPRESS} keyValue="a" onKeyHandle={() => handleSubmit(question.id, 0)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="b" onKeyHandle={() => handleSubmit(question.id, 0)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="c" onKeyHandle={() => handleSubmit(question.id, 0)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="d" onKeyHandle={() => handleSubmit(question.id, 0)} /></div>) : null;
 
         return (
-            <li className="list required multiple active visible focus">
+            <li className={liCName} id={question.id}>
+                {keyHandlers}
+
                 <div className="wrapper" style={{height: '100vh', paddingTop: '25vh'}}>
                     <div className="item">
                         <span>Q</span>
@@ -51,13 +35,14 @@ export default class MultipleChoice extends Component {
                             <div className="attachment-wrapper">
                             
                                 <div className="control">
-                                    <div className="multiple intermitent" style={{opacity: '1'}}>Choose as many as you like</div>
+                                    <div className="multiple intermitent" style={{opacity: '1'}}></div>
                                         <ul className="columns">
                                 
-                                            <li className="container step2 selected" style={{width: '385px'}}>
-                                                <input type="hidden" name="value" value="Backend / Data Engineer" autocomplete="off" />
+
+                                            <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
+                                                <input type="hidden" name="value" value={question.answers[0].answer} autocomplete="off" />
                                                 <div className="letter"><span>A</span></div>
-                                                <span className="label">Backend / Data Engineer</span>
+                                                <span className="label">{question.answers[0].answer}</span>
                                                 <div className="aux " style={{opacity: '1'}}>
                                                     <div className="inset"></div>
                                                     <div className="bg"></div>
@@ -67,10 +52,10 @@ export default class MultipleChoice extends Component {
                                             </li>
 
                                 
-                                            <li className="container step2" style={{width: '385px'}}>
-                                                <input type="hidden" name="value" value="Web Developer" autocomplete="off" />
+                                            <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
+                                                <input type="hidden" name="value" value={question.answers[1].answer} autocomplete="off" />
                                                 <div className="letter"><span>B</span></div>
-                                                <span className="label">Web Developer</span>
+                                                <span className="label">{question.answers[1].answer}</span>
                                                 <div className="aux ">
                                                     <div className="inset"></div>
                                                     <div className="bg"></div>
@@ -80,10 +65,10 @@ export default class MultipleChoice extends Component {
                                             </li>
 
                                 
-                                        <li className="container step2" style={{width: '385px'}}>
-                                            <input type="hidden" name="value" value="Data Scientist" autocomplete="off" />
+                                        <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
+                                            <input type="hidden" name="value" value={question.answers[2].answer} autocomplete="off" />
                                             <div className="letter"><span>C</span></div>
-                                            <span className="label">Data Scientist</span>
+                                            <span className="label">{question.answers[2].answer}</span>
                                             <div className="aux " style={{opacity: '1'}}>
                                                 <div className="inset"></div>
                                                 <div className="bg"></div>
@@ -92,26 +77,19 @@ export default class MultipleChoice extends Component {
                                             </div>
                                         </li>
                                         
-                                        <li className="custom container step2" style={{width: '385px'}}>
-                                            <input type="hidden" name="value" value="!other" autocomplete="off" />
-                                            <div className="letter"><span>D</span></div>
-                                            <span className="label ellipsis"><span className="val">Other</span></span>
-                                            <input className="other-field" type="text" autocomplete="off" />
 
-                                            <div className="button-wrapper ok-confirm">
-                                                <div className="button nav tick tick--button enabled"><span></span></div>
-                                            </div>
-                                        
-                                            <span className="tick"></span>
-                                            <div className="aux ">
+                                        <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
+                                            <input type="hidden" name="value" value={question.answers[3].answer} autocomplete="off" />
+                                            <div className="letter"><span>C</span></div>
+                                            <span className="label">{question.answers[3].answer}</span>
+                                            <div className="aux " style={{opacity: '1'}}>
                                                 <div className="inset"></div>
                                                 <div className="bg"></div>
                                                 <div className="bd"></div>
                                                 <div className="overlay"></div>
                                             </div>
-
-                                            <div className="clear"></div>
                                         </li>
+
 
                                     </ul>
                                 </div>
@@ -120,9 +98,9 @@ export default class MultipleChoice extends Component {
                             </div>
 
                             <div className="clear"></div>
-                            <div className="message "><span></span><div></div></div>
+                            <div className="message"><span></span><div></div></div>
 
-                            <div className="confirm container step2">
+                            <div className="confirm container step2" style={{visibility: 'hidden'}}>
 
                                 <div className="button-wrapper confirm">
                                     <div className="button nav enabled" onClick={() => handleSubmit(question.id, 0)}><span>Ok</span></div>

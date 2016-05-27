@@ -23,6 +23,7 @@ export default class MainSection extends Component {
             handleSubmit: answerQuestion,
             handleSkip: skipQuestion
         };
+        props.active = this.props.activeQuestionId == question.id;
 
         if (question.type == 'multiple-choice') {
             return (<MultipleChoice {...props} />);

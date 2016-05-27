@@ -12,7 +12,7 @@ const initialState = {
     activeQuestionId: '0',
     userId: '10',
     questions: [{
-        question: 'Synetiq is a cutting-edge neuromarketing media research start-up, providing content producers with emotional insights directly from their customers’ brain and body. Leveraging recent developments in wearable bio-sensor technology we work hard to understand how people feel when they see an advertisement, TV show or movie. We use this information to help our customers create more engaging videos and reach their goals.',
+        question: 'Hey there, could we ask you a few simple questions?',
         type: 'paragraph',
         id: '0'
     }]
