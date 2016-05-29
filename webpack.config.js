@@ -1,65 +1,11 @@
 var path = require('path');
-var webpack = require('webpack');
+var args = require('minimist')(process.argv.slice(2));
 
-var port = 3000;
-var srcPath = path.join(__dirname, '/src');
-var outputPath = path.join(__dirname, '/dist');
+var env = args.env || 'development';
+var release = args.release;
+var configPath = path.resolve(__dirname, 'cfg', release ? 'dist' : 'local');
 
-module.exports = {
-    devtool: 'eval',
-    debug: true,
-    port: port,
-    entry: {
-        app: [
-            'webpack-dev-server/client?http://localhost:' + port,
-            'webpack/hot/only-dev-server',
-            'react-hot-loader/patch',
-            './src/index'
-            ],
-        loader: './src/loader/loader'
-    },
-    output: {
-        path: outputPath,
-        filename: '[name].js',
-        publicPath: '/dist/'
-    },
-    resolve: {
-        extensions: ['', '.js']
-    },
-    resolveLoader: {
-        'fallback': path.join(__dirname, 'node_modules')
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
-    ],
-    module: {
-        preLoaders: [{
-            test: /\.jsx?$/,
-            exclude: /(node_modules)/,
-            loader: 'source-map'
-            }
-        ],
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel',
-            exclude: /node_modules/,
-            include: srcPath
-        }, {
-            test: /\.s?css$/,
-            include: srcPath,
-            loaders: [
-                'style',
-                'css',
-                'autoprefixer?browsers=last 3 versions',
-                'sass?outputStyle=expanded'
-                ]
-        },{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
-        { test: /\.(ttf|eot|svg|html)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
-        {
-            test: /\.(png|gif|jpe?g)$/,
-            loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
-        }
-        ]
-    }
-}
+process.env.REACT_WEBPACK_ENV = env;
+process.env.REACT_WEBPACK_LOCAL = args.local;
+
+module.exports = require(configPath);

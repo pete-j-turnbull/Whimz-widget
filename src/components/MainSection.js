@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import Scroll from 'react-scroll';
 import MultipleChoice from './questionTypes/MultipleChoice';
 import MultipleChoiceWithText from './questionTypes/MultipleChoiceWithText';
 import TextOnly from './questionTypes/TextOnly';
