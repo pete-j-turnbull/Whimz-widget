@@ -9,7 +9,7 @@ function *quizStart () {
 
 function *quizNext () {
 
-	var params   = JSON.parse(this.request.query.params);
+	var params   = this.request.query;	
 	response = yield jobHandler.invoke('quizNext', params);
     this.body = JSON.stringify(response);
 }
