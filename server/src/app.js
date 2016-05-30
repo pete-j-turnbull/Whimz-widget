@@ -1,6 +1,9 @@
 var koa        = require('koa');
 var cors       = require('koa-cors');
 var route      = require('koa-route');
+var serve      = require('koa-static-server');
+var Promise    = require('bluebird');
+var hbs        = require('koa-hbs');
 var log        = require('./utilities/logger');
 var koaLogger  = require('./utilities/koa-logger');
 var routes     = require('./utilities/routes.js');
@@ -15,6 +18,7 @@ var app = module.exports = koa();
 app.use(cors());
 app.use(koaLogger());
 
+app.use(serve({rootPath: '/dist', rootDir: config.widgetDist}));
 
 //app routing
 app.use(route.get('/start', routes.Start));

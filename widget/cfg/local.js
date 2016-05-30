@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var _ = require('lodash');
 
-var baseConfig = require(./'base');
+var baseConfig = require('./base');
 var mergeArrays = function (a, b) {
     if (_.isArray(a)) {
         return a.concat(b);
@@ -14,7 +14,7 @@ var config = _.merge({},
         buildType: 'local',
         entry: {
             app: [
-                'webpack-dev-server/client?http://127.0.0.1:' + baseConfig.port',
+                'webpack-dev-server/client?http://127.0.0.1:' + baseConfig.port,
                 'webpack/hot/only-dev-server',
                 './src/index'
             ],
@@ -29,7 +29,7 @@ var config = _.merge({},
         module: {
             loaders: [{
                 test: /\.(js|jsx)$/,
-                loader: 'react-hot!babel',
+                loader: 'babel',
                 include: path.join(__dirname, '/../src')
             }]
         }

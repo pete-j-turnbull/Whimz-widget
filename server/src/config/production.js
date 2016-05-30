@@ -3,5 +3,5 @@ module.exports = {
         enabled: ['debug', 'info', 'warn', 'error']
     },
     port: 80,
-    widgetDist: '/../../widget/dist/production'
+    widgetDist: '../widget/dist/production'
 };
