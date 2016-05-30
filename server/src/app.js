@@ -5,6 +5,7 @@ var log        = require('./utilities/logger');
 var koaLogger  = require('./utilities/koa-logger');
 var routes     = require('./utilities/routes.js');
 var questions  = require('./utilities/questions');
+var config     = require('./config/config');
 
 
 //exports
@@ -23,8 +24,8 @@ app.use(route.get('/next', routes.Next));
 //------------------------------------------------------------------------------
 
 if (!module.parent) {
-    app.listen(8080);
-    console.log('server running on http://localhost:8080/');
+    app.listen(config.port);
+    console.log('server running on http://localhost:' + config.port);
 }
 
 //------------------------------------------------------------------------------
