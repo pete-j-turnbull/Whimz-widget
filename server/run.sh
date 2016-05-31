@@ -1,2 +1,2 @@
-export ENV=production
-npm start
+export ENV=production;
+npm start;
