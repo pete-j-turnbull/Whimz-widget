@@ -6314,18 +6314,3 @@ textarea {
     -webkit-font-smoothing: antialiased!important;
     font-weight: 700
 }
-
-.question-enter {
-  transform: translateY(100%);
-}
-.question-enter.question-enter-active {
-  transform: translateY(0%);
-  transition: transform 1000ms ease-in-out;
-}
-.question-leave {
-  transform: translateY(0%);
-}
-.question-leave.question-leave-active {
-  transform: translateY(-100%);
-  transition: transform 1000ms ease-in-out;
-}

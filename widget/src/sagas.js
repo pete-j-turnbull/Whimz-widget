@@ -3,7 +3,7 @@ import { call, put } from 'redux-saga/effects';
 
 function _answerQuestion (userId, questionId, answerId) {
     return new Promise(function (resolve, reject) {
-        fetch('http://localhost:8080/next?userId=' + userId + '&questionId=' + questionId + '&answerId=' + answerId).then(res => res.json())
+        fetch('/next?userId=' + userId + '&questionId=' + questionId + '&answerId=' + answerId).then(res => res.json())
             .then(json => { resolve(json); });
     });
 }
@@ -15,7 +15,7 @@ function* answerQuestion (action) {
 
 function _skipQuestion (userId, questionId) {
     return new Promise(function (resolve, reject) {
-        fetch('http://localhost:3005/skipQuestion?userId=' + userId + '&questionId=' + questionId).then(res => res.json())
+        fetch('/skipQuestion?userId=' + userId + '&questionId=' + questionId).then(res => res.json())
             .then(json => { resolve(json); });
     });
 }

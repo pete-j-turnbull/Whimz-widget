@@ -4,14 +4,15 @@ import KeyHandler, {KEYPRESS} from 'react-key-handler';
 export default class TextOnly extends Component {
     static propTypes = {
         question: PropTypes.object.isRequired,
+        active: PropTypes.bool.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         handleSkip: PropTypes.func.isRequired
     }
 
     render () {
-        const { question, handleSubmit, handleSkip } = this.props;
-        const liCName = 'textfield required active visible ready focus';
-        const keyHandlers = (<KeyHandler keyEventName={KEYPRESS} keyValue="Enter" onKeyHandle={() => handleSubmit(question.id, 0)} />);
+        const { question, active, handleSubmit, handleSkip } = this.props;
+        const liCName = 'textfield required active visible ready ' + (active ? 'focus': '');
+        const keyHandlers = active ? (<KeyHandler keyEventName={KEYPRESS} keyValue="Enter" onKeyHandle={() => handleSubmit(question.id, 0)} />) : null;
 
         return (
             <li className={liCName} id={question.id}>

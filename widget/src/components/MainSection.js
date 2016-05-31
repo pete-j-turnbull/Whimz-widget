@@ -4,12 +4,13 @@ import MultipleChoice from './questionTypes/MultipleChoice';
 import MultipleChoiceWithText from './questionTypes/MultipleChoiceWithText';
 import TextOnly from './questionTypes/TextOnly';
 import ParagraphQuestion from './questionTypes/ParagraphQuestion';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import smoothScroll from 'smoothscroll';
 
 export default class MainSection extends Component {
     static propTypes = {
         loadingQuestion: PropTypes.bool.isRequired,
-        question: PropTypes.object.isRequired,
+        activeQuestionId: PropTypes.string.isRequired,
+        questions: PropTypes.array.isRequired,
         userId: PropTypes.string.isRequired,
         actions: PropTypes.object.isRequired
     };
@@ -21,6 +22,7 @@ export default class MainSection extends Component {
             handleSubmit: answerQuestion,
             handleSkip: skipQuestion
         };
+        props.active = this.props.activeQuestionId == question.id;
 
         if (question.type == 'multiple-choice') {
             return (<MultipleChoice {...props} />);
@@ -35,20 +37,18 @@ export default class MainSection extends Component {
         }
     };
 
+    componentDidUpdate = () => {
+        var element = document.getElementById(this.props.activeQuestionId);
+        smoothScroll(element);
+    };
 
     render () {
-        const { loadingQuestion, question, userId, actions } = this.props;
-
-        const q = this.renderQuestion(question, (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args));
+        const { loadingQuestion, questions, userId, actions } = this.props;
+        const qs = questions.map((question) => this.renderQuestion(question,
+            (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
         return (
             <ul className="questions">
-                <ReactCSSTransitionGroup
-                    transitionName="question"
-                    transitionEnterTimeout={1000}
-                    transitionLeaveTimeout={1000}
-                >
-                    {q}
-                </ReactCSSTransitionGroup>
+                {qs}
             </ul>
         );
     }

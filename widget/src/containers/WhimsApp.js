@@ -7,12 +7,12 @@ import * as WhimsActions from '../actions/actions';
 
 class WhimsApp extends Component {
     render () {
-        const { loadingQuestion, activeQuestionId, question, userId, ...actions } = this.props;
+        const { loadingQuestion, activeQuestionId, questions, userId, ...actions } = this.props;
         return (
             <div id="typeform">
                 <div className="form" style={{display: 'block'}}>
 
-                    <MainSection loadingQuestion={loadingQuestion} activeQuestionId={activeQuestionId} question={question} userId={userId} actions={actions} />
+                    <MainSection loadingQuestion={loadingQuestion} activeQuestionId={activeQuestionId} questions={questions} userId={userId} actions={actions} />
 
                 </div>
             </div>

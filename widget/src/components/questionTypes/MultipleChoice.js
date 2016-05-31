@@ -4,17 +4,18 @@ import KeyHandler, {KEYPRESS} from 'react-key-handler';
 export default class MultipleChoice extends Component {
     static propTypes = {
         question: PropTypes.object.isRequired,
+        active: PropTypes.bool.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         handleSkip: PropTypes.func.isRequired
     }
 
     render () {
-        const { question, handleSubmit, handleSkip } = this.props;
-        const liCName = 'list required multiple active visible focus'
-        const keyHandlers = (<div><KeyHandler keyEventName={KEYPRESS} keyValue="a" onKeyHandle={() => handleSubmit(question.id, 0)} />
+        const { question, active, handleSubmit, handleSkip } = this.props;
+        const liCName = 'list required multiple active visible ' + (active ? 'focus' : '');
+        const keyHandlers = active ? (<div><KeyHandler keyEventName={KEYPRESS} keyValue="a" onKeyHandle={() => handleSubmit(question.id, 0)} />
                 <KeyHandler keyEventName={KEYPRESS} keyValue="b" onKeyHandle={() => handleSubmit(question.id, 0)} />
                 <KeyHandler keyEventName={KEYPRESS} keyValue="c" onKeyHandle={() => handleSubmit(question.id, 0)} />
-                <KeyHandler keyEventName={KEYPRESS} keyValue="d" onKeyHandle={() => handleSubmit(question.id, 0)} /></div>);
+                <KeyHandler keyEventName={KEYPRESS} keyValue="d" onKeyHandle={() => handleSubmit(question.id, 0)} /></div>) : null;
 
         return (
             <li className={liCName} id={question.id}>
