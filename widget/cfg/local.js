@@ -16,6 +16,7 @@ var config = _.merge({},
             app: [
                 'webpack-dev-server/client?http://127.0.0.1:' + baseConfig.port,
                 'webpack/hot/only-dev-server',
+                'react-hot-loader/patch',
                 './src/index'
             ],
            loader: './src/loader/loader'

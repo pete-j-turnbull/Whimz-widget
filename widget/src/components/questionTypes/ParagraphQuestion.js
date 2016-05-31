@@ -4,14 +4,13 @@ import KeyHandler, {KEYPRESS} from 'react-key-handler';
 export default class ParagraphQuestion extends Component {
     static propTypes = {
         question: PropTypes.object.isRequired,
-        active: PropTypes.bool.isRequired,
         handleSubmit: PropTypes.func.isRequired
     }
 
     render () {
-        const { question, active, handleSubmit } = this.props;
-        const liCName = 'statement active visible ' + (active ? 'focus': '');
-        const keyHandlers = active ? (<KeyHandler keyEventName={KEYPRESS} keyValue="Enter" onKeyHandle={() => handleSubmit(question.id, 0)} />) : null;
+        const { question, handleSubmit } = this.props;
+        const liCName = 'statement active visible focus';
+        const keyHandlers = (<KeyHandler keyEventName={KEYPRESS} keyValue="Enter" onKeyHandle={() => handleSubmit(question.id, 0)} />);
 
         return (
 

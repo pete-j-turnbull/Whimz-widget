@@ -11,11 +11,11 @@ const initialState = {
     loadingQuestion: false,
     activeQuestionId: '0',
     userId: '10',
-    questions: [{
+    question: {
         question: 'Hey there, could we ask you a few simple questions?',
         type: 'paragraph',
         id: '0'
-    }]
+    }
 };
 const store = configureStore(initialState);
 store.runSaga(rootSaga);

@@ -4,7 +4,7 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js --local",
+        "start": "node serverLocal.js --local",
         "build": "npm run build:development && npm run build:production",
         "build:development": "webpack --env=development --release",
         "build:production": "webpack --env=production --release"

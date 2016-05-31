@@ -6316,16 +6316,16 @@ textarea {
 }
 
 .question-enter {
-  transform: translate(100%);
+  transform: translateY(100%);
 }
 .question-enter.question-enter-active {
-  transform: translate(0%);
+  transform: translateY(0%);
   transition: transform 1000ms ease-in-out;
 }
 .question-leave {
-  transform: translate(0%);
+  transform: translateY(0%);
 }
 .question-leave.question-leave-active {
-  transform: translate(-100%);
+  transform: translateY(-100%);
   transition: transform 1000ms ease-in-out;
 }
