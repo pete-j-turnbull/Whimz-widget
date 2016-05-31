@@ -1479,7 +1479,7 @@ a:not(.button) {
     border-bottom: 1px dotted #fff
 }
 body {
-    background-color: transparent;
+    background-color: #000;
     overflow-x: hidden;
 }
 body.scroll-disable {
