@@ -7,18 +7,10 @@ import Root from './containers/Root';
 import rootSaga from './sagas';
 import configureStore from './store/configureStore';
 
-const initialState = {
-    loadingQuestion: false,
-    activeQuestionId: '0',
-    userId: '10',
-    questions: [{
-        question: 'Hey there, could we ask you a few simple questions?',
-        type: 'paragraph',
-        id: '0'
-    }]
-};
+const initialState = {};
 const store = configureStore(initialState);
 store.runSaga(rootSaga);
+store.dispatch({ type: 'INITIALIZE_QUIZ' });
 
 render(
     <AppContainer>

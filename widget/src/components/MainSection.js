@@ -5,13 +5,10 @@ import MultipleChoiceWithText from './questionTypes/MultipleChoiceWithText';
 import TextOnly from './questionTypes/TextOnly';
 import ParagraphQuestion from './questionTypes/ParagraphQuestion';
 import smoothScroll from 'smoothscroll';
+import VelocityComponent from 'velocity-animate';
 
 export default class MainSection extends Component {
     static propTypes = {
-        loadingQuestion: PropTypes.bool.isRequired,
-        activeQuestionId: PropTypes.string.isRequired,
-        questions: PropTypes.array.isRequired,
-        userId: PropTypes.string.isRequired,
         actions: PropTypes.object.isRequired
     };
 
@@ -39,12 +36,12 @@ export default class MainSection extends Component {
 
     componentDidUpdate = () => {
         var element = document.getElementById(this.props.activeQuestionId);
-        smoothScroll(element);
+        if (element) smoothScroll(element);
     };
 
     render () {
-        const { loadingQuestion, questions, userId, actions } = this.props;
-        const qs = questions.map((question) => this.renderQuestion(question,
+        const { loadingQuiz, loadingQuestion, questions, userId, actions } = this.props;
+        const qs = loadingQuiz ? '' : questions.map((question) => this.renderQuestion(question,
             (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
         return (
             <ul className="questions">

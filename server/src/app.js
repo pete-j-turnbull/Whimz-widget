@@ -7,7 +7,7 @@ var hbs        = require('koa-hbs');
 var log        = require('./utilities/logger');
 var koaLogger  = require('./utilities/koa-logger');
 var routes     = require('./utilities/routes.js');
-var questions  = require('./utilities/questions');
+//var questions  = require('./utilities/questions');
 var config     = require('./config/config');
 
 
