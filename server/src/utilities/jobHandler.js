@@ -23,7 +23,7 @@ module.exports.invoke = function (action, params) {
         exchange.publish({ action: action, params: params }, {
             key: 'rpcQueue',
             reply: function (data) {
-                resolve(data);
+                resolve(data.toString('utf8'));
             }
         });
     });

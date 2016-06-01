@@ -18,6 +18,7 @@ app.use(koaLogger());
 //app routing
 app.use(route.get('/start', routes.Start));
 app.use(route.get('/next', routes.Next));
+app.use(route.get('/skip', routes.Skip));
 
 
 //------------------------------------------------------------------------------
