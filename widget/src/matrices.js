@@ -1,3 +1,5 @@
+import ruleMatrices from './ruleMatrices';
+
 var moduleDict = {
     aim: 3,
     purpose: 2,
@@ -18,36 +20,6 @@ var questionArrays = {
     aim: createArray(0.5, 10),
     purpose: createArray(0.5, 12),
     personality: createArray(0.5, 10)
-};
-
-
-// Block an entire module (module name, answerId)
-// answerUpdate (answerId, blockedModules)
-// Add question (module name)
-
-
-var ruleMatrices = {
-    aim: 
-    [
-        [ 0.9, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
-    ],
-    purpose: 
-    [
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
-    ],
-    personality: 
-    [
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
-        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
-    ],
 };
 
 function _add (a, b) { return a.map(function (v, i) { return v + b[i]; }) }
