@@ -1,6 +1,11 @@
-var moduleDict = [3, 2, 5, 6, 7]; // This is a list of the number of questions to be asked in each module
+var moduleDict = {
+    aim: 3,
+    purpose: 2,
+    personality: 5
+};
+
 var questionCounter = 0;
-var currentModule = 0;
+var currentModule = 'aim';
 
 const nQuestions = 10;
 const nAnswers = 0; // TODO
@@ -9,13 +14,11 @@ const nAnswers = 0; // TODO
 const createArray = (x, n) => (Array.apply(null, Array(n)).map(a => x));
 
 
-var questionArrays = [
-    createArray(0.5, moduleDict[0]),
-    createArray(0.5, moduleDict[1]),
-    createArray(0.5, moduleDict[2]),
-    createArray(0.5, moduleDict[3]),
-    createArray(0.5, moduleDict[4])
-];
+var questionArrays = {
+    aim: createArray(0.5, 10),
+    purpose: createArray(0.5, 12),
+    personality: createArray(0.5, 10)
+};
 
 
 // Block an entire module (module name, answerId)
@@ -23,55 +26,61 @@ var questionArrays = [
 // Add question (module name)
 
 
-var ruleMatrices = [
+var ruleMatrices = {
+    aim: 
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [ 0.9, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
     ],
+    purpose: 
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
     ],
+    personality: 
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+        [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ]
     ],
-    [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ],
-    [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ]
-];
+};
 
 function _add (a, b) { return a.map(function (v, i) { return v + b[i]; }) }
+function _setColZero(matrix, col) {
+    var newMatrix = matrix;
+    for (var i = 0; i < matrix.length; i++) {
+        newMatrix[i][col] = 0;
+    }
+    return newMatrix;
+}
 
+module.exports.updateQuestionArray = function (questionId, answerId) {
 
-module.exports.updateQuestionArray = function (answerId) {
-    questionArrays[currentModule] = _add(questionArrays[currentModule], ruleMatrices[currentModule][answerId]);
+    var mod_id = questionId.split(':');
+    var mod = mod_id[0];
+    var id = mod_id[1];
+
+    ruleMatrices[mod] = _setColZero(ruleMatrices[mod], id);
+    if (answerId != null) {
+        questionArrays[mod] = _add(questionArrays[mod], ruleMatrices[mod][answerId]);
+    }
 }
 module.exports.getBestQuestion = function () {
     if (questionCounter >= moduleDict[currentModule]) {
         questionCounter = 0;
-        currentModule += 1;  
+        currentModule = Object.keys(moduleDict)[ Object.keys(moduleDict).indexOf(currentModule) + 1 ];
+        console.log(currentModule);
     } else {
         questionCounter += 1;
     }
     var maxV = 0;
     var index = 0;
-    questionArrays[currentModule].map(function (v, i) { if (v > maxV) { index = i; maxV = v; } })
+    questionArrays[currentModule].map(function (v, i) { if (v > maxV) { index = i; maxV = v; } });
 
     return currentModule + ':' + index;
 }

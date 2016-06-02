@@ -6,7 +6,7 @@ function *quizStart () {
     //var response = yield jobHandler.invoke('startQuiz');
     var response = { userId: '0',
                      question: {
-                       id: '0',
+                       id: 'aim:0',
                        type: 'paragraph',
                        question: 'Hey there, could we ask you a few simple questions?'
                    }};
