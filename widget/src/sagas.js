@@ -53,11 +53,15 @@ export function* watchAnswers () {
 export function* watchInit () {
     yield takeLatest('INITIALIZE_QUIZ', initQuiz);
 }
+export function* watchStartOver () {
+    yield takeLatest('START_OVER', initQuiz);
+}
 
 export default function* rootSaga () {
     yield [
         watchSkips(),
         watchAnswers(),
-        watchInit()
+        watchInit(),
+        watchStartOver()
     ];
 }

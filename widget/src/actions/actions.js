@@ -14,3 +14,10 @@ export const skipQuestion = (userId, questionId) => {
             questionId
     };
 }
+
+export const startOver = (userId) => {
+    return {
+        type: 'START_OVER',
+            userId
+    };
+}
