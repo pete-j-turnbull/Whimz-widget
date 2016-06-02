@@ -9,6 +9,10 @@ export default class MultipleChoice extends Component {
         handleSkip: PropTypes.func.isRequired
     }
 
+    renderOptions = () => {
+
+    };
+
     render () {
         const { question, active, handleSubmit, handleSkip } = this.props;
         const liCName = 'list required multiple active visible ' + (active ? 'focus' : '');

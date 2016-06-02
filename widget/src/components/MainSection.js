@@ -44,9 +44,17 @@ export default class MainSection extends Component {
         const qs = loadingQuiz ? '' : questions.map((question) => this.renderQuestion(question,
             (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
         return (
-            <ul className="questions">
-                {qs}
-            </ul>
+            <div>
+                <ul className="questions">
+                    {qs}
+                </ul>
+                <div className="buttons-wrapper">
+                    <div className="button-wrapper continue" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>Skip</span></div>
+                    <div className="button-wrapper continue"><span>Submit</span></div>
+                    <div className="button-wrapper continue" onClick={actions.startOver}><span>Start over</span></div>
+                </div>
+            </div>
+
         );
     }
 };
