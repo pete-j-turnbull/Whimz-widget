@@ -17,30 +17,9 @@ module.exports = [
         id: "ai:0",
         type: "multiple-choice",
         question: "Hey there, By answering a few quick questions you'll get to know yourself and your chances on the 
-        jobs market a bit better! I'll take less then 5 minutes, we promise!",
+        jobs market a bit better! It'll take less than 5 minutes, we promise!",
         answers: [{id:"0", answer: "Let's go!"}, 
                   {id:"1", answer: "Tell me more before I do this."}]
-    }, 
-
-
-    {
-        id: "ai:1",
-        type: "multiple-choice",
-        question: '?',
-        answers: [{id: "", answer: ''}, 
-                  {id: "", answer: ''}, 
-                  {id: "", answer: ''}, 
-                  {id: "", answer: ''}]
-    }, 
-
-    {
-        id: "ai:2",
-        type: "multiple-choice",
-        question: "",
-        answers: [{id: "", answer: ''}, 
-                  {id: "", answer: ''}, 
-                  {id: "", answer: ''}, 
-                  {id: "", answer: ''}]
     }, 
 
     // CATEGORY
@@ -55,15 +34,76 @@ module.exports = [
                   {id: "32", answer: "Social/environmental impact"}]
     }, 
 
+    {
+        id: "ca:1",
+        type: "multiple-choice",
+        question: "Do you have a stong preference for the type of your next job?",
+        answers: [{id: "33", answer: "Yes, I'd like to work full-time, 9-5."}, 
+                  {id: "34", answer: "I'd maybe try a 9-5 if I really, really had to."}, 
+                  {id: "35", answer: "I really prefer freelancing, or a highly flexible job."}, 
+                  {id: "36", answer: "I'm totally flexible!"}]
+    }, 
+
+    {
+        id: "ca:2",
+        type: "multiple-choice",
+        question: "If you had a qood idea, where would you write it down?",
+        answers: [{id: "41", answer: "Little black notebook / a piece of paper."}, 
+                  {id: "42", answer: "Sublime Text"}, 
+                  {id: "43", answer: "Evernote"}, 
+                  {id: "44", answer: "Google docs"}]
+    }, 
+
 
     // AVAILABILITY
-    
+    {
+        id: "av:0",
+        type: "multiple-choice",
+        question: "Are you actually looking for something new? Why?",
+        answers: [{id: "37", answer: "I have an awesome job, but would consider switching if something awesome came along."}, 
+                  {id: "38", answer: "I'm still studying, but I started looking around."}, 
+                  {id: "39", answer: "I'm looking for a freelancing gig, or something part-time/remote."}, 
+                  {id: "40", answer: "I'm bored.}]
+    }, 
+
 
     // LOSTSOUL
     
 
-    // STILLSTUDENT
+    // STUDENT
     
+    {
+        id: "st:0",
+        type: "multiple-choice",
+        question: "Where are you now with school?",
+        answers: [{id: "45", answer: "High school, soon to be over!"}, 
+                  {id: "46", answer: "Freshman / Sophomore"}, 
+                  {id: "47", answer: "Graduating soon!"}, 
+                  {id: "48", answer: "Postgrad / PHd"}]
+    }, 
+
+    {
+        id: "st:1",
+        type: "multiple-choice",
+        question: "Where are you now with school?",
+        answers: [{id: "37", answer: "High school, soon to be over!"}, 
+                  {id: "38", answer: "Freshman / Sophomore"}, 
+                  {id: "39", answer: "Graduating soon!"}, 
+                  {id: "40", answer: "Postgrad / PHd"}]
+    },
+
+    {
+        id: "st:2",
+        type: "multiple-choice",
+        question: "What kind of a job are you looking for?",
+        answers: [{id: "37", answer: ""}, 
+                  {id: "38", answer: "Freshman / Sophomore"}, 
+                  {id: "39", answer: "Graduating soon!"}, 
+                  {id: "40", answer: "Postgrad / PHd"}]
+    },
+
+
+
 
     // TECHIE
     
@@ -126,7 +166,7 @@ module.exports = [
 
     {
         id: "pe:0",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "How punctual are you? Honestly.",
         answers: [{id: "2" , answer: "I take pride in always being on time."}, 
                   {id: "3", answer: "I’m mostly on time."}, 
@@ -136,12 +176,30 @@ module.exports = [
 
     {
         id: "pe:1",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "How much do you value punctuality?",
         answers: [{id: "6" , answer: "I expect others to be exactly on time, always."}, 
                   {id: "7", answer: "Somewhat, as long as the delay is under 5 minutes."}, 
                   {id: "8", answer: "I don’t mind if someone’s late as long as they tell me on time."}, 
                   {id: "9", answer: "I’m quite flexible about it."}]
+    },
+
+    {
+        id: "pe:2",
+        type: "multiple-choice",
+        question: "In a certain light, wouldn't nuclear war be exciting?",
+        answers: [{id: "49" , answer: "I suppose, yes."}, 
+                  {id: "50", answer: "Nope."}, 
+                  {id: "51", answer: "Isn't this an OKc question?"}]
+    },
+
+    {
+        id: "pe:3",
+        type: "multiple-choice",
+        question: "Yes it is. Moving on, how much do you wanna focus on solving a specific problem at work?",
+        answers: [{id: "52" , answer: "I’d like to dedicate my full attention to solving a single problem really well."}, 
+                  {id: "53", answer: "I’d like to work on multiple problems simultaneously."}, 
+                  {id: "54", answer: "Not sure."}]
     }
 
 
@@ -151,15 +209,7 @@ module.exports = [
 
 
 
-
  
-
-    // {
-    //     id: 'purpose:1',
-    //     type: 'multiple-choice',
-    //     question: 'Would you be willing to work part time?',
-    //     answers: [{id: '0', answer: 'Full time is what I prefer.'}, {id: '1', answer: 'I don’t want to have fixed hours.'}, {id: '2', answer: '2-3 days a week is fine.'}, {id: '3', answer: 'Other...'}]
-    // }, 
 
     // {
     //     id: 'purpose:0',
@@ -182,10 +232,7 @@ module.exports = [
     //     answers: [{id: '0', answer: 'Yes, I hate sitting in the same office every day.'}, {id: '1', answer: 'I would prefer having an office, but it’s not necessary.'}, {id: '2', answer: 'I find myself most productive in the office.'}, {id: '3', answer: 'Other'}]
     // }, {
     //     id: 'aim:2',
-    //     type: 'multiple-choice',
-    //     question: 'How much do you wanna focus on solving a specific problem at work?',
-    //     answers: [{id: '0', answer: 'I’d like to dedicate my full attention to solving a single problem really well.'}, {id: '1', answer: 'I’d like to work on multiple problems simultaneously.'}, {id: '2', answer: 'Other.'}, {id: '3', answer: 'Not sure.'}]
-    // }, {
+    //   
     //     id: 'aim:1',
     //     type: 'multiple-choice',
     //     question: 'What’s the ideal office size you would like to have?',
