@@ -1,5 +1,5 @@
 import objectAssign from 'object-assign';
-import qMatrix from './matrices';
+import { updateQuestionArray, getBestQuestion } from './matrices';
 
 var userState = { questions: [] };
 var allQuestions = [
@@ -47,7 +47,7 @@ var allQuestions = [
         type: 'text-only',
         question: 'How many jobs have you applied for this year?'
     }, {
-        id: '4',
+        id: 'aim:0',
         type: 'multiple-choice',
         question: 'What is the most important factor in finding your next job?',
         answers: [{id: 0, answer: 'Getting a high salary'}, {id: 1, answer: 'Learning as much as possible.'}, {id: 2, answer: 'Having fun with my colleagues.'}, {id: 3, answer: 'Other...'}]
@@ -57,12 +57,12 @@ var allQuestions = [
         question: 'What are your thoughts on remote work?',
         answers: [{id: 0, answer: 'Yes, I hate sitting in the same office every day.'}, {id: 1, answer: 'I would prefer having an office, but it’s not necessary.'}, {id: 2, answer: 'I find myself most productive in the office.'}, {id: 3, answer: 'Other'}]
     }, {
-        id: '2',
+        id: '1',
         type: 'multiple-choice',
         question: 'How much do you wanna focus on solving a specific problem at work?',
         answers: [{id: 0, answer: 'I’d like to dedicate my full attention to solving a single problem really well.'}, {id: 1, answer: 'I’d like to work on multiple problems simultaneously.'}, {id: 2, answer: 'Other.'}, {id: 3, answer: 'Not sure.'}]
     }, {
-        id: '1',
+        id: '0',
         type: 'multiple-choice',
         question: 'What’s the ideal office size you would like to have?',
         answers: [{id: 0, answer: 'I want us to all fit around a table.'}, {id: 1, answer: 'Smaller startup (10-20).'}, {id: 2, answer: 'Medium-sized.'}, {id: 3, answer: 'I would like to work for a long-established, big company (300+).'}]
@@ -70,6 +70,10 @@ var allQuestions = [
 ];
 
 var firstQuestion = allQuestions[0];
+
+function lookupQuestionById (questionId) {
+    allQuestions.forEach(function (question) { if (question.id == questionId) { return question; } });
+}
 
 function nextQuestion (userId, questionId, skipped, answerId) {
 
@@ -79,28 +83,31 @@ function nextQuestion (userId, questionId, skipped, answerId) {
             userState = objectAssign({}, userState, { questions: userState.questions.concat([{ questionId: questionId, skipped: true }]) });
         } else {
             userState = objectAssign({}, userState, { questions: userState.questions.concat([{ questionId: questionId, skipped: false, answerId: answerId }]) });
+            updateQuestionArray(questionId);
 		}
 
+        
         // Calculate next question
 
         // Fire a message to server to store user state there
-        console.log(userState);
+        // console.log(userState);
 
+        //resolve(allQuestions[userState.questions.length - 1]);
 
+        updateQuestionArray(answerId);
 
+        var bestId = getBestQuestion();
+        var newQ = lookupQuestionById( bestId );
 
+        console.log(bestId)
+        console.log(newQ);
 
-
-        resolve(allQuestions[userState.questions.length - 1]);
-
-
+        resolve(newQ);
 
 
 	});
 }
 
 module.exports.nextQuestion = nextQuestion;
-
-
 
 
