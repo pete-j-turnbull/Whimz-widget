@@ -16,9 +16,18 @@ module.exports = [
     {
         id: "ai:0",
         type: "multiple-choice",
-        question: "Hey there, By answering a few quick questions you'll get to know yourself and your chances on the jobs market a bit better! It'll take less than 5 minutes, we promise!",
+        question: "Hey there. Knowing what you could do best is pretty damn important, and we're here to help! It'll take less than 5 minutes, we promise!",
         answers: [{id:"0", answer: "Let's go!"}, 
-                  {id:"1", answer: "Tell me more before I do this."}]
+                  {id:"1", answer: "Why should I care?"}]
+    }, 
+
+    {
+        id: "ai:1",
+        type: "multiple-choice",
+        question: "What can we help you with?",
+        answers: [{id:"55", answer: "I'm a recent / soon-to-be graduate. Need clarity on what my options are."},
+                  {id:"56", answer: "I wanna know what to do when robots take over my current job."},  
+                  {id:"57", answer: "I wanna play a game that tells which techie archetype I am."}]
     }, 
 
     // CATEGORY
@@ -77,32 +86,29 @@ module.exports = [
         question: "Where are you now with school?",
         answers: [{id: "45", answer: "High school, soon to be over!"}, 
                   {id: "46", answer: "Freshman / Sophomore"}, 
-                  {id: "47", answer: "Graduating soon!"}, 
+                  {id: "47", answer: "Graduated recently / Graduating soon!"}, 
                   {id: "48", answer: "Postgrad / PHd"}]
     }, 
 
-    {
+{
         id: "st:1",
         type: "multiple-choice",
-        question: "Where are you now with school?",
-        answers: [{id: "37", answer: "High school, soon to be over!"}, 
-                  {id: "38", answer: "Freshman / Sophomore"}, 
-                  {id: "39", answer: "Graduating soon!"}, 
-                  {id: "40", answer: "Postgrad / PHd"}]
+        question: "What kind of a job are you looking for?",
+        answers: [{id: "58", answer: "Summer internship"}, 
+                  {id: "59", answer: "Part-time job"}, 
+                  {id: "60", answer: "All in: I wanna work full time!"}, 
+                  {id: "61", answer: "I'd like to be a research assistant."}]
     },
 
     {
         id: "st:2",
         type: "multiple-choice",
-        question: "What kind of a job are you looking for?",
-        answers: [{id: "37", answer: ""}, 
-                  {id: "38", answer: "Freshman / Sophomore"}, 
-                  {id: "39", answer: "Graduating soon!"}, 
-                  {id: "40", answer: "Postgrad / PHd"}]
+        question: "If you could learn a lot, would you take on an unpaid position?",
+        answers: [{id: "61", answer: "Yes, I'm all for maximizing learning."}, 
+                  {id: "63", answer: "Only if they provide housing."}, 
+                  {id: "64", answer: "Maybe, if I could make ends meet somehow."},
+                  {id: "65", answer: "Unpaid? No way!"}]
     },
-
-
-
 
     // TECHIE
     

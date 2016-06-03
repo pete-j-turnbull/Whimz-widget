@@ -1,16 +1,12 @@
 import ruleMatrices from './ruleMatrices';
 
 var moduleDict = {
-    ai: 1,
-    ca: 1,
+    ai: 2,
+    ca: 3,
     av: 1,
-    lo: 1,
-    st: 1,
-    te: 1,
-    su: 1,
-    cu: 1,
-    pe: 1,
-    fe: 1
+    st: 3,
+    cu: 5,
+    pe: 4
 };
 
 var askedQuestions = [];
@@ -23,16 +19,12 @@ var currentModule = 'ai';
 
 const createArray = (x, n) => (Array.apply(null, Array(n)).map(a => x));
 var questionArrays = {
-    ai: createArray(0.5, 1),
-    ca: createArray(0.5, 1),
+    ai: createArray(0.5, 2),
+    ca: createArray(0.5, 3),
     av: createArray(0.5, 1),
-    lo: createArray(0.5, 1),
-    st: createArray(0.5, 1),
-    te: createArray(0.5, 1),
-    su: createArray(0.5, 1),
+    st: createArray(0.5, 3),
     cu: createArray(0.5, 5),
-    pe: createArray(0.5, 2),
-    fe: createArray(0.5, 1)
+    pe: createArray(0.5, 4),
 };
 
 
