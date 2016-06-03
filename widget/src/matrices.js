@@ -9,7 +9,7 @@ var moduleDict = {
     pe: 4
 };
 
-var askedQuestions = [];
+var askedQuestions = ['ai:0'];
 
 var nAnswers = 0;
 ruleMatrices['ai'].map(function (key) { nAnswers = ruleMatrices['ai'].length; });

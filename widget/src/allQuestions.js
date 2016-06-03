@@ -14,14 +14,6 @@ module.exports = [
     //AIM
 
     {
-        id: "ai:0",
-        type: "multiple-choice",
-        question: "Hey there. Knowing what you could do best is pretty damn important, and we're here to help! It'll take less than 5 minutes, we promise!",
-        answers: [{id:"0", answer: "Let's go!"}, 
-                  {id:"1", answer: "Why should I care?"}]
-    }, 
-
-    {
         id: "ai:1",
         type: "multiple-choice",
         question: "What can we help you with?",
