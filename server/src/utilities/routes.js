@@ -6,9 +6,11 @@ function *quizStart () {
     //var response = yield jobHandler.invoke('startQuiz');
     var response = { userId: '0',
                      question: {
-                       id: 'aim:0',
-                       type: 'paragraph',
-                       question: 'Hey there, could we ask you a few simple questions?'
+                       id: 'ai:0',
+                       type: 'multiple-choice',
+                       question: "Hey there, By answering a few quick questions you'll get to know yourself and your chances on the jobs market a bit better! I'll take less then 5 minutes, we promise!",
+                       answers: [{ id: "0", answer: "Let's go!" },
+                                 { id: "1", answer: "Tell me more before I do this."}]
                    }};
     this.body = JSON.stringify(response);
 }

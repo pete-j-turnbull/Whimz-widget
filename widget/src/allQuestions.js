@@ -16,13 +16,12 @@ module.exports = [
     {
         id: "ai:0",
         type: "multiple-choice",
-        question: "Hey there, By answering a few quick questions you'll get to know yourself and your chances on the 
-        jobs market a bit better! I'll take less then 5 minutes, we promise!",
+        question: "Hey there,\nBy answering a few quick questions you'll get to know yourself and your chances on the jobs market a bit better! I'll take less then 5 minutes, we promise!",
         answers: [{id:"0", answer: "Let's go!"}, 
                   {id:"1", answer: "Tell me more before I do this."}]
     }, 
 
-
+/*
     {
         id: "ai:1",
         type: "multiple-choice",
@@ -42,6 +41,7 @@ module.exports = [
                   {id: "", answer: ''}, 
                   {id: "", answer: ''}]
     }, 
+*/
 
     // CATEGORY
 
@@ -74,8 +74,58 @@ module.exports = [
     // CULTURE (meaning work ethics, attitude towards management and problem solving)
     
     {
+        id: "av:0",
+        type: "multiple-choice",
+        question: "Do you enjoy working under a project manager?",
+        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
+                  {id: "11", answer: "No, they are mostly useless."}, 
+                  {id: "12", answer: "I never had a project manager."}, 
+                  {id: "13", answer: "Other: "}]
+    }, 
+
+    {
+        id: "lo:0",
+        type: "multiple-choice",
+        question: "Do you enjoy working under a project manager?",
+        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
+                  {id: "11", answer: "No, they are mostly useless."}, 
+                  {id: "12", answer: "I never had a project manager."}, 
+                  {id: "13", answer: "Other: "}]
+    },
+
+    {
+        id: "st:0",
+        type: "multiple-choice",
+        question: "Do you enjoy working under a project manager?",
+        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
+                  {id: "11", answer: "No, they are mostly useless."}, 
+                  {id: "12", answer: "I never had a project manager."}, 
+                  {id: "13", answer: "Other: "}]
+    },
+
+    {
+        id: "te:0",
+        type: "multiple-choice",
+        question: "Do you enjoy working under a project manager?",
+        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
+                  {id: "11", answer: "No, they are mostly useless."}, 
+                  {id: "12", answer: "I never had a project manager."}, 
+                  {id: "13", answer: "Other: "}]
+    },
+
+    {
+        id: "su:0",
+        type: "multiple-choice",
+        question: "Do you enjoy working under a project manager?",
+        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
+                  {id: "11", answer: "No, they are mostly useless."}, 
+                  {id: "12", answer: "I never had a project manager."}, 
+                  {id: "13", answer: "Other: "}]
+    },
+
+    {
         id: "cu:0",
-        type: "multiple-choice-with-text"
+        type: "multiple-choice",
         question: "Do you enjoy working under a project manager?",
         answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
                   {id: "11", answer: "No, they are mostly useless."}, 
@@ -85,7 +135,7 @@ module.exports = [
 
     {
         id: "cu:1",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "What is the most annoying thing about working in an office?",
         answers: [{id: "14" , answer: "That I have to be on time."}, 
                   {id: "15", answer: "I get distracted by the crowd."}, 
@@ -95,7 +145,7 @@ module.exports = [
 
     {
         id: "cu:2",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "Would you actually be willing to work in an office?",
         answers: [{id: "18" , answer: "Yes, if they payed me enough."}, 
                   {id: "19", answer: "It depends on the office vibe and the colleagues."}, 
@@ -105,7 +155,7 @@ module.exports = [
 
     {
         id: "cu:3",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "Is money the primary influencing factor in choosing your next job?",
         answers: [{id: "22" , answer: "Yes"}, 
                   {id: "23", answer: "Not entirely"}, 
@@ -114,7 +164,7 @@ module.exports = [
 
     {
         id: "cu:4",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "How would you go about solving an incredibly hard problem in your field?",
         answers: [{id: "25" , answer: "I’d put in hours required and work as hard as I can."}, 
                   {id: "26", answer: "I’d find someone who could tell me (part of) the solution."}, 
@@ -126,7 +176,7 @@ module.exports = [
 
     {
         id: "pe:0",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "How punctual are you? Honestly.",
         answers: [{id: "2" , answer: "I take pride in always being on time."}, 
                   {id: "3", answer: "I’m mostly on time."}, 
@@ -136,18 +186,19 @@ module.exports = [
 
     {
         id: "pe:1",
-        type: "multiple-choice"
+        type: "multiple-choice",
         question: "How much do you value punctuality?",
         answers: [{id: "6" , answer: "I expect others to be exactly on time, always."}, 
                   {id: "7", answer: "Somewhat, as long as the delay is under 5 minutes."}, 
                   {id: "8", answer: "I don’t mind if someone’s late as long as they tell me on time."}, 
                   {id: "9", answer: "I’m quite flexible about it."}]
-    }
+    },
 
-
-
-
-
+    {
+        id: "fe:0",
+        type: "text-only",
+        question: "Feedback"
+    } 
 
 
 

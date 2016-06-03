@@ -15,6 +15,10 @@ function lookupQuestionById (questionId) {
 function nextQuestion (userId, questionId, skipped, answerId) {
 
 	return new Promise(function (resolve, reject) {
+
+        console.log('Fetching next question...');
+        console.log('questionId: ' + questionId + ', answerId: ' + answerId);
+
         // Update local user state
         if (skipped) {
             //userState = objectAssign({}, userState, { questions: userState.questions.concat([{ questionId: questionId, skipped: true }]) });
@@ -29,14 +33,14 @@ function nextQuestion (userId, questionId, skipped, answerId) {
         // Fire a message to server to store user state there
         // console.log(userState);
 
-        //resolve(allQuestions[userState.questions.length - 1]);
-
 
         var bestId = getBestQuestion();
-        var newQ = lookupQuestionById( bestId );
+        console.log('Best id: ');
+        console.log(bestId);
 
-        console.log('Best id: ' + bestId);
-        console.log('New Q: ' + newQ);
+        var newQ = lookupQuestionById( bestId );
+        console.log('New Q: ');
+        console.log(newQ);
 
         resolve(newQ);
 

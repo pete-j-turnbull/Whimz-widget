@@ -9,17 +9,32 @@ export default class MultipleChoice extends Component {
         handleSkip: PropTypes.func.isRequired
     }
 
-    renderOptions = () => {
-
+    renderOptions = (question, handleSubmit) => {
+        const keyList = ['A', 'B', 'C', 'D'];
+        return (<div>
+                    {question.answers.map((a, i) => (
+                        <li className="container step2" onClick={() => handleSubmit(question.id, a.id)} key={a.id} style={{width: '385px'}}>
+                            <input type="hidden" name="value" value={a.answer} autocomplete="off" />
+                            <div className="letter"><span>{keyList[i]}</span></div>
+                            <span className="label">{a.answer}</span>
+                            <div className="aux " style={{opacity: '1'}}>
+                                <div className="inset"></div>
+                                <div className="bg"></div>
+                                <div className="bd"></div>
+                                <div className="overlay"></div>
+                            </div>
+                        </li>
+                    ))};
+                </div>);  
     };
 
     render () {
         const { question, active, handleSubmit, handleSkip } = this.props;
         const liCName = 'list required multiple active visible ' + (active ? 'focus' : '');
-        const keyHandlers = active ? (<div><KeyHandler keyEventName={KEYPRESS} keyValue="a" onKeyHandle={() => handleSubmit(question.id, 0)} />
-                <KeyHandler keyEventName={KEYPRESS} keyValue="b" onKeyHandle={() => handleSubmit(question.id, 0)} />
-                <KeyHandler keyEventName={KEYPRESS} keyValue="c" onKeyHandle={() => handleSubmit(question.id, 0)} />
-                <KeyHandler keyEventName={KEYPRESS} keyValue="d" onKeyHandle={() => handleSubmit(question.id, 0)} /></div>) : null;
+        const keyHandlers = active ? (<div><KeyHandler keyEventName={KEYPRESS} keyValue="a" onKeyHandle={() => handleSubmit(question.id, question.answers[0].id)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="b" onKeyHandle={() => handleSubmit(question.id, question.answers[1].id)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="c" onKeyHandle={() => handleSubmit(question.id, question.answers[2].id)} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="d" onKeyHandle={() => handleSubmit(question.id, question.answers[3].id)} /></div>) : null;
 
         return (
             <li className={liCName} id={question.id}>
@@ -40,60 +55,9 @@ export default class MultipleChoice extends Component {
                             
                                 <div className="control">
                                     <div className="multiple intermitent" style={{opacity: '1'}}></div>
-                                        <ul className="columns">
-                                
+                                    <ul className="columns">
 
-                                            <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
-                                                <input type="hidden" name="value" value={question.answers[0].answer} autocomplete="off" />
-                                                <div className="letter"><span>A</span></div>
-                                                <span className="label">{question.answers[0].answer}</span>
-                                                <div className="aux " style={{opacity: '1'}}>
-                                                    <div className="inset"></div>
-                                                    <div className="bg"></div>
-                                                    <div className="bd"></div>
-                                                    <div className="overlay"></div>
-                                                </div>
-                                            </li>
-
-                                
-                                            <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
-                                                <input type="hidden" name="value" value={question.answers[1].answer} autocomplete="off" />
-                                                <div className="letter"><span>B</span></div>
-                                                <span className="label">{question.answers[1].answer}</span>
-                                                <div className="aux ">
-                                                    <div className="inset"></div>
-                                                    <div className="bg"></div>
-                                                    <div className="bd"></div>
-                                                    <div className="overlay"></div>
-                                                </div>
-                                            </li>
-
-                                
-                                        <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
-                                            <input type="hidden" name="value" value={question.answers[2].answer} autocomplete="off" />
-                                            <div className="letter"><span>C</span></div>
-                                            <span className="label">{question.answers[2].answer}</span>
-                                            <div className="aux " style={{opacity: '1'}}>
-                                                <div className="inset"></div>
-                                                <div className="bg"></div>
-                                                <div className="bd"></div>
-                                                <div className="overlay"></div>
-                                            </div>
-                                        </li>
-                                        
-
-                                        <li className="container step2" onClick={() => handleSubmit(question.id, 0)} style={{width: '385px'}}>
-                                            <input type="hidden" name="value" value={question.answers[3].answer} autocomplete="off" />
-                                            <div className="letter"><span>C</span></div>
-                                            <span className="label">{question.answers[3].answer}</span>
-                                            <div className="aux " style={{opacity: '1'}}>
-                                                <div className="inset"></div>
-                                                <div className="bg"></div>
-                                                <div className="bd"></div>
-                                                <div className="overlay"></div>
-                                            </div>
-                                        </li>
-
+                                        {this.renderOptions(question, handleSubmit)}
 
                                     </ul>
                                 </div>
@@ -102,7 +66,10 @@ export default class MultipleChoice extends Component {
                             </div>
 
                             <div className="clear"></div>
-                            <div className="message"><span></span><div></div></div>
+                            <div className="message"><span></span>
+                                <div>
+                                </div>
+                            </div>
 
                             <div className="confirm container step2" style={{visibility: 'hidden'}}>
 

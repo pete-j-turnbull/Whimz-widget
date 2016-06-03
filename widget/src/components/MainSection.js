@@ -48,10 +48,14 @@ export default class MainSection extends Component {
                 <ul className="questions">
                     {qs}
                 </ul>
-                <div className="buttons-wrapper">
-                    <div className="button-wrapper continue" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>Skip</span></div>
+                
+                <div className="submit-wrapper">
                     <div className="button-wrapper continue"><span>Submit</span></div>
-                    <div className="button-wrapper continue" onClick={actions.startOver}><span>Start over</span></div>
+                </div>
+                
+                <div className="buttons-wrapper">
+                    <div className="button-wrapper continue" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>SKIP</span></div>
+                    <div className="button-wrapper continue" onClick={actions.startOver}><span>START OVER</span></div>
                 </div>
             </div>
 
