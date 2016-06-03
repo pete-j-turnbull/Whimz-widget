@@ -13,7 +13,7 @@
     position: relative
 }
 .style-transparent-choice .aux {
-    border-color: #ff5100
+    border-color: #10AD8D
 }
 .style-transparent-choice .aux,
 .style-transparent-choice .aux div {
@@ -436,7 +436,7 @@
     color: #fff
 }
 .color-secondary {
-    color: #ff5100
+    color: #10AD8D
 }
 .layout-columns {
     display: table;
@@ -539,10 +539,10 @@
     margin: 0 auto
 }
 .file-upload-box svg.icon-cloud path {
-    fill: #ff5100
+    fill: #10AD8D
 }
 .file-upload-box svg.icon-file path {
-    stroke: #ff5100
+    stroke: #10AD8D
 }
 .file-upload-box .box-cancel {
     z-index: 6;
@@ -566,7 +566,7 @@
     -ms-filter: "alpha(Opacity=65)"
 }
 .file-upload-box .box-cancel svg path {
-    stroke: #ff5100
+    stroke: #10AD8D
 }
 .file-upload-box .box-cancel:hover span {
     -khtml-opacity: 1;
@@ -622,18 +622,18 @@
 }
 .file-upload-box .box-text {
     padding: 15px;
-    color: #ff5100;
+    color: #10AD8D;
     text-align: center;
     line-height: 20px;
     font-size: 14px
 }
 .file-upload-box-simple input {
-    color: #ff5100
+    color: #10AD8D
 }
 .file-upload-box-simple .box-text {
     font-size: 11px;
     padding: 10px 0;
-    color: #ff5100
+    color: #10AD8D
 }
 .default .file-upload:not(.focus) input {
     display: none!important
@@ -655,7 +655,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px
@@ -672,7 +672,7 @@
 .choice-square .label {
     position: relative;
     z-index: 1;
-    color: #ff5100
+    color: #10AD8D
 }
 .report .choice-square .label {
     color: #fff
@@ -716,7 +716,7 @@
     position: absolute;
     z-index: 0;
     font-weight: 700;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     top: 1px;
     bottom: 1px;
     left: 0;
@@ -746,7 +746,7 @@
     padding-left: 10px;
     border-left-width: 1px;
     border-left-style: dashed;
-    border-color: #ff5100
+    border-color: #10AD8D
 }
 .info-text {
     margin: 10px 0;
@@ -763,12 +763,12 @@
     padding-left: 26px;
     padding-right: 26px;
     display: block;
-    color: #ff5100
+    color: #10AD8D
 }
 .ranking-list-item .letter {
     float: left;
     margin-top: -2px;
-    color: #ff5100
+    color: #10AD8D
 }
 .ranking-list-item .hamburger-feedback {
     background: url(/bundles/quickyformadmin/images/RANKING-FIELD-reorder-icon.png);
@@ -786,7 +786,7 @@
     padding-left: 8px
 }
 .ranking-list-item .hamburger-feedback .move-icon .arrow {
-    color: #ff5100;
+    color: #10AD8D;
     font-weight: 700;
     font-size: 15px;
     padding: 0;
@@ -835,7 +835,7 @@
     border-radius: 4px
 }
 .focused-ranking-item {
-    border: 1px solid #ff5100
+    border: 1px solid #10AD8D
 }
 .stripe-logo {
     display: -moz-inline-stack;
@@ -880,7 +880,7 @@
     position: relative
 }
 .container .aux {
-    border-color: #ff5100
+    border-color: #10AD8D
 }
 .container .aux,
 .container .aux div {
@@ -1450,7 +1450,7 @@ acronym {
     background: rgba(255, 81, 0, .2)
 }
 .buttonColor {
-    color: #ff5100
+    color: #10AD8D
 }
 .backgroundColor {
     background-color: transparent
@@ -1459,10 +1459,10 @@ acronym {
     background-color: rgba(125, 87, 85, .8)
 }
 .primaryColor {
-    color: #ff5100
+    color: #10AD8D
 }
 .secondaryColor {
-    color: #ff5100
+    color: #10AD8D
 }
 .overlayOpacity {
     -khtml-opacity: .68;
@@ -1657,7 +1657,7 @@ var.tag {
     height: 30px
 }
 .item {
-    color: #ff5100;
+    color: #10AD8D;
     font-family: Helvetica Neue, Helvetica, arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     position: absolute;
@@ -1696,7 +1696,7 @@ var.tag {
     top: 17px;
     height: 2px;
     width: 7px;
-    background-color: #ff5100
+    background-color: #10AD8D
 }
 @media (max-width: 800px) {
     .item .arrow {
@@ -1714,8 +1714,8 @@ var.tag {
     height: 4px;
     margin-top: -2px;
     margin-left: 3px;
-    border-right: 2px solid #ff5100;
-    border-bottom: 2px solid #ff5100;
+    border-right: 2px solid #10AD8D;
+    border-bottom: 2px solid #10AD8D;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -2456,7 +2456,7 @@ var.tag {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100;
+    color: #10AD8D;
     top: 6px;
     position: absolute;
     left: 100%;
@@ -2480,7 +2480,7 @@ var.tag {
     max-width: 800px
 }
 #fixed-footer .content .text {
-    color: #ff5100
+    color: #10AD8D
 }
 #fixed-footer .content .button-wrapper {
     position: absolute
@@ -2531,7 +2531,7 @@ var.tag {
     }
 }
 #fixed-footer .content .phishing-notice a {
-    color: #ff5100;
+    color: #10AD8D;
     text-decoration: underline;
     border-bottom: 0
 }
@@ -2578,7 +2578,7 @@ var.tag {
 #fixed-footer .content #progress .label {
     font-size: 13px;
     font-family: Helvetica, Arial;
-    color: #ff5100
+    color: #10AD8D
 }
 #fixed-footer .content #progress .bar {
     position: relative;
@@ -2603,7 +2603,7 @@ var.tag {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    background-color: #ff5100
+    background-color: #10AD8D
 }
 #fixed-footer .content #progress .bar div.progress {
     display: block;
@@ -2614,7 +2614,7 @@ var.tag {
     -webkit-transition: width ease-out 200ms 0ms;
     -o-transition: width ease-out 200ms 0ms;
     transition: width ease-out 200ms 0ms;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 0;
     -webkit-border-bottom-right-radius: 0;
@@ -2850,7 +2850,7 @@ var.tag {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100;
+    color: #10AD8D;
     top: 6px;
     position: absolute;
     left: 100%;
@@ -2874,7 +2874,7 @@ var.tag {
     max-width: 800px
 }
 #unfixed-footer .content .text {
-    color: #ff5100
+    color: #10AD8D
 }
 #unfixed-footer .content .button-wrapper {
     position: absolute
@@ -2925,7 +2925,7 @@ var.tag {
     }
 }
 #unfixed-footer .content .phishing-notice a {
-    color: #ff5100;
+    color: #10AD8D;
     text-decoration: underline;
     border-bottom: 0
 }
@@ -2972,7 +2972,7 @@ var.tag {
 #unfixed-footer .content #progress .label {
     font-size: 13px;
     font-family: Helvetica, Arial;
-    color: #ff5100
+    color: #10AD8D
 }
 #unfixed-footer .content #progress .bar {
     position: relative;
@@ -2997,7 +2997,7 @@ var.tag {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    background-color: #ff5100
+    background-color: #10AD8D
 }
 #unfixed-footer .content #progress .bar div.progress {
     display: block;
@@ -3008,7 +3008,7 @@ var.tag {
     -webkit-transition: width ease-out 200ms 0ms;
     -o-transition: width ease-out 200ms 0ms;
     transition: width ease-out 200ms 0ms;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 0;
     -webkit-border-bottom-right-radius: 0;
@@ -3180,7 +3180,7 @@ var.tag {
     margin-right: 10px;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    color: #ff5100;
+    color: #10AD8D;
     position: relative;
     bottom: -70px;
     -moz-transition: all ease-out 300ms 0ms;
@@ -3241,7 +3241,7 @@ var.tag {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100
+    color: #10AD8D
 }
 textarea.placeholder,
 input.placeholder {
@@ -3358,7 +3358,7 @@ input.placeholder {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100;
+    color: #10AD8D;
     padding-top: 6px;
     font-size: 12px
 }
@@ -3446,7 +3446,7 @@ input.placeholder {
 .button.nav {
     display: inline-block;
     cursor: default;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     width: auto;
     height: 35px;
     line-height: 30px;
@@ -3766,7 +3766,7 @@ input.placeholder {
 .button.key {
     display: inline-block;
     cursor: default;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     width: 15px;
     height: 25px;
     line-height: 19px;
@@ -3926,7 +3926,7 @@ input.placeholder {
 .button.key-great {
     display: inline-block;
     cursor: default;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     width: 26px;
     height: 35px;
     line-height: 30px;
@@ -4086,7 +4086,7 @@ input.placeholder {
 .button.general {
     display: inline-block;
     cursor: default;
-    background-color: #ff5100;
+    background-color: #10AD8D;
     width: auto;
     height: 45px;
     line-height: 38px;
@@ -4421,7 +4421,7 @@ input.placeholder {
     padding: 5px
 }
 .container.confirm .text {
-    color: #ff5100;
+    color: #10AD8D;
     font-family: Helvetica, Arial;
     float: left;
     font-size: 11px;
@@ -4466,7 +4466,7 @@ input.placeholder {
 input,
 textarea {
     display: block;
-    color: #ff5100;
+    color: #10AD8D;
     width: 100%;
     resize: none;
     background: 0 0;
@@ -4775,7 +4775,7 @@ textarea {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100;
+    color: #10AD8D;
     top: 11px;
     position: absolute;
     left: 100%;
@@ -5042,7 +5042,7 @@ textarea {
     font-family: Helvetica, Arial;
     font-size: 11px;
     margin: 16px 8px 0;
-    color: #ff5100;
+    color: #10AD8D;
     top: 4px;
     position: absolute;
     left: 100%;
@@ -5334,7 +5334,7 @@ textarea {
     padding-left: 10px;
     border-left-width: 1px;
     border-left-style: dashed;
-    border-color: #ff5100
+    border-color: #10AD8D
 }
 #typeform .questions .list .button-wrapper.confirm .button.visible {
     visibility: visible;
@@ -5380,7 +5380,7 @@ textarea {
     padding: 8px 37px
 }
 #typeform .questions .list ul li .tick {
-    color: #ff5100;
+    color: #10AD8D;
     top: 50%;
     margin-top: -12px
 }
@@ -5388,7 +5388,7 @@ textarea {
     color: #ffeee5!important
 }
 #typeform .questions .list ul li .label {
-    color: #ff5100;
+    color: #10AD8D;
     font-size: 21px
 }
 @media (max-width: 800px) {
@@ -5403,7 +5403,7 @@ textarea {
     }
 }
 #typeform .questions .list ul li .letter {
-    color: #ff5100;
+    color: #10AD8D;
     position: absolute;
     left: 10px;
     top: 10px
@@ -5557,7 +5557,7 @@ textarea {
     height: 46px
 }
 .list-image li .text .label {
-    color: #ff5100;
+    color: #10AD8D;
     position: relative;
     display: -moz-inline-stack;
     display: inline-block;
@@ -5580,7 +5580,7 @@ textarea {
     height: 100%
 }
 .list-image li .text .letter {
-    color: #ff5100;
+    color: #10AD8D;
     position: absolute;
     margin-top: -2px;
     left: 6px
@@ -5644,7 +5644,7 @@ textarea {
 }
 .yes-no .scroll-area,
 .terms .scroll-area {
-    color: #ff5100;
+    color: #10AD8D;
     -webkit-touch-callout: text;
     -webkit-user-select: text;
     -khtml-user-select: text;
@@ -5659,7 +5659,7 @@ textarea {
 .yes-no ul,
 .terms ul {
     margin-bottom: 10px;
-    color: #ff5100
+    color: #10AD8D
 }
 .yes-no ul li,
 .terms ul li {
@@ -5698,7 +5698,7 @@ textarea {
     display: none
 }
 .rating .icons {
-    color: #ff5100
+    color: #10AD8D
 }
 .rating .icons li {
     float: left;
@@ -6314,3 +6314,36 @@ textarea {
     -webkit-font-smoothing: antialiased!important;
     font-weight: 700
 }
+
+
+.buttons-wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 78vh;
+    width: 100%;
+    text-align: left;
+    margin-left: 20vw;
+}
+.buttons-wrapper .button-wrapper {
+    display: inline-block;
+    cursor: pointer;
+    background-color: rgba(20, 21, 20, 0.55);
+    width: 8vw;
+    height: 15px;
+    line-height: 8px;
+    padding: 12px 12px 0;
+    font-size: 12px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-align: center;
+    font-weight: 400;
+    font-family: Helvetica Neue, Helvetica, arial, sans-serif;
+    max-width: 610px;
+    overflow: hidden;
+    color: #CCBEBE;
+    margin-left: 2vw
+}
+
+
+
