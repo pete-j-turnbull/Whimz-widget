@@ -22,6 +22,7 @@ module.exports = [
     }, 
 
     // CATEGORY
+
     {
         id: "ca:0",
         type: "multiple-choice",
@@ -41,7 +42,6 @@ module.exports = [
                   {id: "35", answer: "I really prefer freelancing, or a highly flexible job."}, 
                   {id: "36", answer: "I'm totally flexible!"}]
     }, 
-*/
 
     {
         id: "ca:2",
@@ -62,7 +62,7 @@ module.exports = [
         answers: [{id: "37", answer: "I have an awesome job, but would consider switching if something awesome came along."}, 
                   {id: "38", answer: "I'm still studying, but I started looking around."}, 
                   {id: "39", answer: "I'm looking for a freelancing gig, or something part-time/remote."}, 
-                  {id: "40", answer: "I'm bored.}]
+                  {id: "40", answer: "I'm bored."}]
     }, 
 
 
@@ -113,58 +113,8 @@ module.exports = [
     // CULTURE (meaning work ethics, attitude towards management and problem solving)
     
     {
-        id: "av:0",
-        type: "multiple-choice",
-        question: "Do you enjoy working under a project manager?",
-        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
-                  {id: "11", answer: "No, they are mostly useless."}, 
-                  {id: "12", answer: "I never had a project manager."}, 
-                  {id: "13", answer: "Other: "}]
-    }, 
-
-    {
-        id: "lo:0",
-        type: "multiple-choice",
-        question: "Do you enjoy working under a project manager?",
-        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
-                  {id: "11", answer: "No, they are mostly useless."}, 
-                  {id: "12", answer: "I never had a project manager."}, 
-                  {id: "13", answer: "Other: "}]
-    },
-
-    {
-        id: "st:0",
-        type: "multiple-choice",
-        question: "Do you enjoy working under a project manager?",
-        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
-                  {id: "11", answer: "No, they are mostly useless."}, 
-                  {id: "12", answer: "I never had a project manager."}, 
-                  {id: "13", answer: "Other: "}]
-    },
-
-    {
-        id: "te:0",
-        type: "multiple-choice",
-        question: "Do you enjoy working under a project manager?",
-        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
-                  {id: "11", answer: "No, they are mostly useless."}, 
-                  {id: "12", answer: "I never had a project manager."}, 
-                  {id: "13", answer: "Other: "}]
-    },
-
-    {
-        id: "su:0",
-        type: "multiple-choice",
-        question: "Do you enjoy working under a project manager?",
-        answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
-                  {id: "11", answer: "No, they are mostly useless."}, 
-                  {id: "12", answer: "I never had a project manager."}, 
-                  {id: "13", answer: "Other: "}]
-    },
-
-    {
         id: "cu:0",
-        type: "multiple-choice",
+        type: "multiple-choice-with-text",
         question: "Do you enjoy working under a project manager?",
         answers: [{id: "10" , answer: "Usually yes. Everything would be more chaotic without them."}, 
                   {id: "11", answer: "No, they are mostly useless."}, 
@@ -253,11 +203,6 @@ module.exports = [
 
 
 
-    {
-        id: "fe:0",
-        type: "text-only",
-        question: "Feedback"
-    } 
 
 
 
