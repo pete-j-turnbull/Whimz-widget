@@ -9,7 +9,8 @@ import VelocityComponent from 'velocity-animate';
 
 export default class MainSection extends Component {
     static propTypes = {
-        actions: PropTypes.object.isRequired
+        actions: PropTypes.object.isRequired,
+        questionCount: PropTypes.number.isRequired
     };
 
     renderQuestion = (question, answerQuestion, skipQuestion) => {
@@ -39,6 +40,12 @@ export default class MainSection extends Component {
         const { loadingQuiz, loadingQuestion, questions, userId, actions } = this.props;
         const qs = loadingQuiz ? '' : questions.map((question) => this.renderQuestion(question,
             (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
+
+        const submitButton = (questionCount >= 10) ?
+            (<div className="submit-wrapper">
+                <div className="button-wrapper continue flex-container flex-center"><span>Submit</span></div>
+            </div>) : '';
+
         return (
             <div>
                 <ul className="questions">
@@ -52,9 +59,8 @@ export default class MainSection extends Component {
                     </div>
                 </div>
 
-                <div className="submit-wrapper">
-                    <div className="button-wrapper continue flex-container flex-center"><span>Submit</span></div>
-                </div>
+                {submitButton}
+                
             </div>
 
         );
