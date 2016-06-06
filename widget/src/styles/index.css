@@ -4,10 +4,17 @@
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .flex-center {
   align-items: center;
 }
 
+.flex-double {
+  flex: 2;
+}
 
 /*---------------- Form Layout Styles --------------------*/
 
@@ -49,25 +56,54 @@ ul.questions {
     justify-content: center;
 }
 
-.buttons-wrapper div{
-
+.continue-wrapper {
+  flex: 1;
+  padding: 0 20px;
 }
 
-.button-wrapper.continue {
+.button-wrapper {
     height: 40px;
     width: 130px;
     justify-content: center;
     border-radius: 5px;
     background-color: rgba(20, 21, 20, 0.55);
     color: #CCBEBE;
-    margin: 0 20px;
+    /*margin: 0 20px;*/
 }
 
+.submit-wrapper {
+    padding: 20px 20px 0;
+}
 
+.submit {
+  width: 100%;
+  border: 1px solid #10AD8D;
+  letter-spacing: 1px;
 
-/*--------------------------------------------------------*/
+}
 
+.submit:hover {
+  background-color: #10AD8D;
+  color: #333;
+  font-weight: 400!important;
+}
 
+/*-------------------Override Styles---------------------------------*/
+
+.whimsapp .item {
+  font-weight: 600!important;
+  font-size: 20px;
+}
+
+.question {
+  font-size: 25px;
+}
+
+.question, .button-wrapper {
+  font-weight: 100;
+  text-shadow: 0px 0px 0px rgba(150, 150, 150, 1) !important;
+  letter-spacing: 1px;
+}
 
 
 /* ------------------ Media Queries -------------------*/
