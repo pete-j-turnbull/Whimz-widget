@@ -23,10 +23,6 @@ export default class MainSection extends Component {
 
         if (question.type == 'multiple-choice') {
             return (<MultipleChoice {...props} />);
-        } else if (question.type == 'multiple-choice-with-text') {
-            return (<MultipleChoiceWithText {...props} />);
-        } else if (question.type == 'text-only') {
-            return (<TextOnly {...props} />);
         } else if (question.type == 'paragraph') {
             return (<ParagraphQuestion {...props} />);
         } else {
@@ -49,13 +45,15 @@ export default class MainSection extends Component {
                     {qs}
                 </ul>
                 
-                <div className="submit-wrapper">
-                    <div className="button-wrapper continue"><span>Submit</span></div>
+                <div className="flex-container flex-center buttons-wrapper">
+                    <div className="flex-container">
+                        <div className="button-wrapper continue flex-container flex-center" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>SKIP</span></div>
+                        <div className="button-wrapper continue flex-container flex-center" onClick={actions.startOver}><span>START OVER</span></div>
+                    </div>
                 </div>
-                
-                <div className="buttons-wrapper">
-                    <div className="button-wrapper continue" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>SKIP</span></div>
-                    <div className="button-wrapper continue" onClick={actions.startOver}><span>START OVER</span></div>
+
+                <div className="submit-wrapper">
+                    <div className="button-wrapper continue flex-container flex-center"><span>Submit</span></div>
                 </div>
             </div>
 

@@ -6316,34 +6316,5 @@ textarea {
 }
 
 
-.buttons-wrapper {
-    position: fixed;
-    z-index: 10000;
-    top: 78vh;
-    width: 100%;
-    text-align: left;
-    margin-left: 20vw;
-}
-.buttons-wrapper .button-wrapper {
-    display: inline-block;
-    cursor: pointer;
-    background-color: rgba(20, 21, 20, 0.55);
-    width: 8vw;
-    height: 15px;
-    line-height: 8px;
-    padding: 12px 12px 0;
-    font-size: 12px;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    text-align: center;
-    font-weight: 400;
-    font-family: Helvetica Neue, Helvetica, arial, sans-serif;
-    max-width: 610px;
-    overflow: hidden;
-    color: #CCBEBE;
-    margin-left: 2vw
-}
-
 
 

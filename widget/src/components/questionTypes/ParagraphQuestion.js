@@ -18,7 +18,7 @@ export default class ParagraphQuestion extends Component {
             <li className={liCName} id={question.id}>
                 {keyHandlers}
 
-                <div className="wrapper" style={{height: '100vh', paddingTop: '25vh'}}>
+                <div className="wrapper">
                     <div className="item" style={{position: 'relative'}}>“</div>
                     <div className="question">
                         <span>{question.question}</span>
