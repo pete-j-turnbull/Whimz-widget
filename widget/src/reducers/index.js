@@ -4,7 +4,7 @@ import objectAssign from 'object-assign';
 export default function rootReducer (state, action) {
     switch (action.type) {
     	case 'INITIALIZING_QUIZ':
-    		return objectAssign({}, state, { loadingQuiz: true, loadingQuestion: true });
+    		return objectAssign({}, state, { loadingQuiz: true, loadingQuestion: true, questionCount: 10 });
     	case 'INITIALIZED_QUIZ':
     		return objectAssign({}, state, { loadingQuiz: false,
     			                             loadingQuestion: false,
