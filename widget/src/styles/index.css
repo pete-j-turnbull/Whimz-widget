@@ -71,6 +71,10 @@ ul.questions {
     /*margin: 0 20px;*/
 }
 
+.button-wrapper:hover {
+  background-color: rgba(20, 21, 20, 0.35);
+}
+
 .submit-wrapper {
     padding: 20px 20px 0;
 }
@@ -90,6 +94,10 @@ ul.questions {
 
 /*-------------------Override Styles---------------------------------*/
 
+.content-wrapper .columns {
+  color: transparent;
+}
+
 .whimsapp .item {
   font-weight: 600!important;
   font-size: 20px;
@@ -103,6 +111,7 @@ ul.questions {
   font-weight: 100;
   text-shadow: 0px 0px 0px rgba(150, 150, 150, 1) !important;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 
