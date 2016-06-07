@@ -9,7 +9,7 @@ import configureStore from './store/configureStore';
 
 const initialState = {};
 const store = configureStore(initialState);
-store.runSaga(rootSaga);
+store.runSaga(rootSaga, store.getState);
 store.dispatch({ type: 'INITIALIZE_QUIZ' });
 
 render(

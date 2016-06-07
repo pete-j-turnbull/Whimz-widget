@@ -1,8 +1,7 @@
 import objectAssign from 'object-assign';
-import { updateQuestionArray, getBestQuestion } from './_matrices';
+import { getBestQuestion } from './_matrices';
 import allQs from './_allQuestions';
 
-var userState = { questions: [] };
 
 function lookupQuestionById (questionId) {
     for (var i=0; i < allQs.length; i++) {
@@ -12,21 +11,9 @@ function lookupQuestionById (questionId) {
     }
 }
 
-function nextQuestion (userId, questionId, skipped, answerId) {
+function nextQuestion (userId, answeredQuestions) {
 
 	return new Promise(function (resolve, reject) {
-
-        console.log('Fetching next question...');
-        console.log('questionId: ' + questionId + ', answerId: ' + answerId);
-
-        // Update local user state
-        if (skipped) {
-            //userState = objectAssign({}, userState, { questions: userState.questions.concat([{ questionId: questionId, skipped: true }]) });
-            updateQuestionArray(questionId, null);
-        } else {
-            //userState = objectAssign({}, userState, { questions: userState.questions.concat([{ questionId: questionId, skipped: false, answerId: answerId }]) });
-            updateQuestionArray(questionId, answerId);
-		}
 
         // Calculate next question
 
@@ -34,7 +21,7 @@ function nextQuestion (userId, questionId, skipped, answerId) {
         // console.log(userState);
 
 
-        var bestId = getBestQuestion();
+        var bestId = getBestQuestion(answeredQuestions);
         console.log('Best id: ');
         console.log(bestId);
 

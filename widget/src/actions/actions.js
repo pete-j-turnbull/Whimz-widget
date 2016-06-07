@@ -1,17 +1,10 @@
-export const answerQuestion = (userId, questionId, answerId) => {
+export const nextQuestion = (userId, answeredQuestions, questionId, answerId) => {
     return {
-        type: 'ANSWER_QUESTION',
+        type: 'NEXT_QUESTION',
             userId,
+            answeredQuestions,
             questionId,
             answerId
-    };
-}
-
-export const skipQuestion = (userId, questionId) => {
-    return {
-        type: 'SKIP_QUESTION',
-            userId,
-            questionId
     };
 }
 

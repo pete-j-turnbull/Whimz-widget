@@ -12,12 +12,11 @@ export default class MainSection extends Component {
         actions: PropTypes.object.isRequired
     };
 
-    renderQuestion = (question, answerQuestion, skipQuestion) => {
+    renderQuestion = (question, handleQuestion) => {
         var props = {
             key: question.id,
             question: question,
-            handleSubmit: answerQuestion,
-            handleSkip: skipQuestion
+            handleQuestion
         };
         props.active = this.props.activeQuestionId == question.id;
 
@@ -36,11 +35,11 @@ export default class MainSection extends Component {
     };
 
     render () {
-        const { loadingQuiz, loadingQuestion, questionCount, questions, userId, actions } = this.props;
+        const { loadingQuiz, loadingQuestion, answeredQuestions, questions, userId, actions } = this.props;
         const qs = loadingQuiz ? '' : questions.map((question) => this.renderQuestion(question,
-            (...args) => actions.answerQuestion(userId, ...args), (...args) => actions.skipQuestion(userId, ...args)));
+            (...args) => actions.nextQuestion(userId, answeredQuestions, ...args) ));
 
-        const submitButton = (questionCount >= 10) ?
+        const submitButton = (answeredQuestions.length >= 3) ?
             (<div className="submit-wrapper flex-double"><div className="button-wrapper submit flex-container flex-center"><span>PLEASE NO MORE!</span></div></div>)
             : '';
 
@@ -53,7 +52,7 @@ export default class MainSection extends Component {
                 <div className="flex-container flex-center buttons-wrapper">
                     <div className="flex-container flex-column">
                         <div className="flex-container">
-                            <div className="continue-wrapper"><div className="button-wrapper flex-container flex-center" onClick={() => actions.skipQuestion(userId, this.props.activeQuestionId) }><span>SKIP</span></div></div>
+                            <div className="continue-wrapper"><div className="button-wrapper flex-container flex-center" onClick={() => actions.nextQuestion(userId, answeredQuestions, this.props.activeQuestionId, null) }><span>SKIP</span></div></div>
                             <div className="continue-wrapper"><div className="button-wrapper flex-container flex-center" onClick={actions.startOver}><span>START OVER</span></div></div>
                         </div>
                         {submitButton}
