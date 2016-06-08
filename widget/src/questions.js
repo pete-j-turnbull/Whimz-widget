@@ -1,4 +1,3 @@
-import objectAssign from 'object-assign';
 import { getBestQuestion } from './_matrices';
 import allQs from './_allQuestions';
 

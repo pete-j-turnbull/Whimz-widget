@@ -9,8 +9,8 @@ export default function rootReducer (state, action) {
     		return objectAssign({}, state, { loadingQuiz: false,
     			                             loadingQuestion: false,
     										 userId: action.payload.userId,
-    										 activeQuestionId: action.payload.question.id,
-    										 questions: [action.payload.question]
+    										 activeQuestionId: action.payload.questions[0].id,
+    										 questions: action.payload.questions
     										});
         case 'UPDATE_ANSWERED':
             return objectAssign({}, state, { answeredQuestions: state.answeredQuestions.concat([{ questionId: action.questionId, answerId: action.answerId }]) });
