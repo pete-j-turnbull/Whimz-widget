@@ -1,2 +1,2 @@
 export ENV=production;
-npm start;
+nohup npm start &;
